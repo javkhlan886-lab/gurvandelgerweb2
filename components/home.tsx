@@ -60,11 +60,6 @@ export default function HeroSection() {
         <h1 className="text-4xl sm:text-5xl md:text-[68px] font-normal tracking-tight max-w-3xl leading-snug mb-6 text-[#1C1C1A]"></h1>
         <p className="max-w-2xl text-base sm:text-lg text-gray-700 mb-10 px-2 sm:px-0"></p>
 
-        <Button className="group bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-8 py-3.5 rounded-full text-sm font-medium transition-all shadow-sm flex items-center gap-2">
-          Холбоо барих
-          <ArrowRight className="w-4 h-4 text-gray-700 transition-transform group-hover:translate-x-1" />
-        </Button>
-
         {/* 4. Projects Section - 3 Cards Horizontally */}
         <section className="w-full mt-16 md:mt-20">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
