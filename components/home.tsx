@@ -10,15 +10,15 @@ export default function HeroSection() {
   const galleryImages = [];
 
   return (
-    <div className="w-full min-h-screen bg-cover bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased selection:bg-lime-400">
+    <div className="w-full min-h-screen bg-cover bg-center bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased selection:bg-lime-400">
       {/* 1. Header / Navigation */}
-      <header className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between border-b border-gray-200/60">
+      <header className="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-gray-200/60">
         {/* Logo */}
-        <div className="text-3xl font-normal tracking-tight cursor-pointer text-white/90 ">
+        <div className="text-3xl font-normal tracking-tight cursor-pointer text-white/90">
           <a href="/"> Гурвандэлгэр ХХК</a>
         </div>
 
-        <nav className="flex items-center gap-8 text-sm font-medium text-white/90 drop-shadow-sm">
+        <nav className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-white/90 drop-shadow-sm">
           <Link
             href="/about"
             className="hover:text-[#C1E994] transition-colors"
@@ -43,13 +43,10 @@ export default function HeroSection() {
           >
             Нийгмийн хариуцлага
           </Link>
-
-          {/* Холбоо барих Button */}
-          <Button
-            className="bg-[#C1E994]
-            hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center"
-          >
-            <Link href="/ContactUs">Холбоо барих</Link>
+          <Button className="w-full md:w-auto bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center justify-center">
+            <Link href="/ContactUs" className="w-full text-center">
+              Холбоо барих
+            </Link>
           </Button>
 
           {/* Аватар */}
@@ -58,19 +55,23 @@ export default function HeroSection() {
       </header>
 
       {/* 2. Hero Content Section */}
-      <main className="max-w-7xl mx-auto px-6 pt-24 pb-16 flex flex-col items-center text-center">
+      <main className="max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-16 flex flex-col items-center text-center">
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-[68px] font-normal tracking-tight max-w-5xl leading-[1.1] mb-12 text-[#1C1C1A]">
-          {" "}
-        </h1>
+        <h1 className="text-4xl sm:text-5xl md:text-[68px] font-normal tracking-tight max-w-3xl leading-snug mb-6 text-[#1C1C1A]"></h1>
+        <p className="max-w-2xl text-base sm:text-lg text-gray-700 mb-10 px-2 sm:px-0"></p>
+
+        <Button className="group bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-8 py-3.5 rounded-full text-sm font-medium transition-all shadow-sm flex items-center gap-2">
+          Холбоо барих
+          <ArrowRight className="w-4 h-4 text-gray-700 transition-transform group-hover:translate-x-1" />
+        </Button>
 
         {/* 4. Projects Section - 3 Cards Horizontally */}
-        <section className="w-full mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="w-full mt-16 md:mt-20">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* Project 1: hand-fruit-game */}
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-48 bg-gradient-to-br from-orange-300 to-pink-400 flex items-center justify-center">
-                <span className="text-4xl">🏗 ️</span>
+                <span className="text-4xl">🏗️</span>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">
@@ -116,8 +117,7 @@ export default function HeroSection() {
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">
                   Сэргээгдэх эрчим хүчний салбарт хийсэн төсөл, нарны болон
-                  салхины эрчим хүчний шийдлүүд, байгаль орчны нөлөөллийг
-                  бууруулах
+                  салхины эрчим хүчний шийдлүүд.
                 </p>
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
                   Үзэх →
