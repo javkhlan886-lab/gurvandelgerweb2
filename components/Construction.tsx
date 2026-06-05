@@ -24,22 +24,16 @@ export default function Construction() {
           >
             Бидний тухай
           </Link>
-          <a
-            href="/OurPartnesrs"
-            className="hover:text-[#C1E994] transition-colors"
-          >
+          <a href="/partner" className="hover:text-[#C1E994] transition-colors">
             Партнер байгууллагууд
           </a>
           <a
-            href="/ProjectsList"
+            href="/projects"
             className="hover:text-[#C1E994] transition-colors"
           >
             Хийсэн төсөлүүд
           </a>
-          <a
-            href="/SocialDuties"
-            className="hover:text-[#C1E994] transition-colors"
-          >
+          <a href="/social" className="hover:text-[#C1E994] transition-colors">
             Нийгмийн хариуцлага
           </a>
 
@@ -48,7 +42,7 @@ export default function Construction() {
             className="bg-[#C1E994]
             hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center"
           >
-            <Link href="/ContactUs">Холбоо барих</Link>
+            <Link href="/contact">Холбоо барих</Link>
           </Button>
 
           {/* Аватар */}

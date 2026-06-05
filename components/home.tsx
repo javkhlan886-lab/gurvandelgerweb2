@@ -12,11 +12,97 @@ export default function HeroSection() {
   return (
     <div className="w-full min-h-screen bg-cover bg-center bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased selection:bg-lime-400">
       {/* 1. Header / Navigation */}
-      <header className="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-gray-200/60">
-        {/* Logo */}
-        <div className="text-3xl font-normal tracking-tight cursor-pointer text-white/90">
-          <a href="/"> Гурвандэлгэр ХХК</a>
-        </div>
+      <header className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-gray-200/60">
+        {/* ХЭЛБЭРИЙГ НЬ ЗАССАН ШИНЭ СҮҮДЭРТЭЙ, АЛТЛАГ SVG ЛОГО */}
+        <Link
+          href="/"
+          className="flex items-center gap-3.5 group select-none cursor-pointer"
+        >
+          <svg
+            viewBox="0 0 200 200"
+            className="w-12 h-12 md:w-14 md:h-14 filter drop-shadow-[0_3px_5px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105 duration-300"
+          >
+            <defs>
+              {/* Алтлаг металл градиент */}
+              <linearGradient id="realGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFF293" />
+                <stop offset="25%" stopColor="#F4BF24" />
+                <stop offset="50%" stopColor="#FFFFFF" />
+                <stop offset="75%" stopColor="#DF9F00" />
+                <stop offset="100%" stopColor="#8A5A00" />
+              </linearGradient>
+            </defs>
+
+            {/* Төгс дугуй гадна хүрээ */}
+            <circle
+              cx="100"
+              cy="100"
+              r="90"
+              fill="none"
+              stroke="url(#realGold)"
+              strokeWidth="11"
+            />
+
+            {/* Дотор талын нарийн алтан шугам */}
+            <circle
+              cx="100"
+              cy="100"
+              r="77"
+              fill="none"
+              stroke="url(#realGold)"
+              strokeWidth="2"
+            />
+
+            {/* Дээд талын таслалтай хагас цагираг нум */}
+            <path
+              d="M 44 75 A 64 64 0 0 1 156 75"
+              fill="none"
+              stroke="url(#realGold)"
+              strokeWidth="15"
+              strokeLinecap="butt"
+            />
+
+            {/* Доод талын таслалтай хагас цагираг нум */}
+            <path
+              d="M 44 125 A 64 64 0 0 0 156 125"
+              fill="none"
+              stroke="url(#realGold)"
+              strokeWidth="15"
+              strokeLinecap="butt"
+            />
+
+            {/* Хамгийн төв хэсгийн дээд болон доод жижиг хагас нумууд */}
+            <path
+              d="M 64 100 A 36 36 0 0 1 136 100"
+              fill="none"
+              stroke="url(#realGold)"
+              strokeWidth="15"
+              strokeLinecap="butt"
+            />
+            <path
+              d="M 64 100 A 36 36 0 0 0 136 100"
+              fill="none"
+              stroke="url(#realGold)"
+              strokeWidth="15"
+              strokeLinecap="butt"
+            />
+          </svg>
+
+          {/* Зурган дээрх шиг Алтлаг, Сүүдэртэй, Босоодуу Текст */}
+          <span
+            className="text-xl md:text-2xl font-black tracking-wide uppercase font-sans italic"
+            style={{
+              background:
+                "linear-gradient(135deg, #FFF59E 0%, #F5B800 30%, #FFFCE6 55%, #D49200 85%, #7A4F00 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              filter:
+                "drop-shadow(1px 2px 1px rgba(0,0,0,0.9)) drop-shadow(0px 0px 3px rgba(245,184,0,0.3))",
+            }}
+          >
+            Гурван Дэлгэр ХХК
+          </span>
+        </Link>
 
         <nav className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium text-white/90 drop-shadow-sm">
           <Link
@@ -44,7 +130,7 @@ export default function HeroSection() {
             Нийгмийн хариуцлага
           </Link>
           <Button className="w-full md:w-auto bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center justify-center">
-            <Link href="/ContactUs" className="w-full text-center">
+            <Link href="/contact" className="w-full text-center">
               Холбоо барих
             </Link>
           </Button>

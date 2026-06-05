@@ -48,7 +48,7 @@ export default function SocialDuties() {
             className="bg-[#C1E994]
             hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center"
           >
-            <Link href="/ContactUs">Холбоо барих</Link>
+            <Link href="/contact">Холбоо барих</Link>
           </Button>
 
           {/* Аватар */}
