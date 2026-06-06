@@ -56,7 +56,7 @@ export default function SocialDuties() {
         </nav>
       </header>
       <h1 className="text-3xl font-bold text-black/90 mt-10 justify-center flex">
-        Za end tailbar hesguudee oruulaarai guys niigmiin ajiluud
+        Coming soon
       </h1>
     </div>
   );
