@@ -152,7 +152,7 @@ export default function HeroSection() {
             {/* Project 1: hand-fruit-game */}
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-48 bg-gradient-to-br from-orange-300 to-pink-400 flex items-center justify-center">
-                <span className="text-4xl">🏗️</span>
+                <img src="/construction.png" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">
@@ -163,15 +163,15 @@ export default function HeroSection() {
                   ажил гүйцэтгэлийн мэдээлэл.
                 </p>
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
-                  Үзэх →
+                  <Link href="/building">Үзэх →</Link>
                 </Button>
               </div>
             </div>
 
             {/* Project 2: movieapp */}
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <div className="h-48 bg-gradient-to-br from-blue-300 to-purple-400 flex items-center justify-center">
-                <span className="text-4xl">💻</span>
+              <div className="h-48 bg-gradient-to-br bg-cover flex items-center justify-center">
+                <img src="/datacc.png" className="w-100 h-60" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">
@@ -182,7 +182,7 @@ export default function HeroSection() {
                   хөгжүүлэлт, IT дэд бүтцийн шийдлүүд.
                 </p>
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
-                  Үзэх →
+                  <Link href="/telecom"> Үзэх →</Link>
                 </Button>
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function HeroSection() {
             {/* Project 3: test */}
             <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
               <div className="h-48 bg-gradient-to-br from-green-300 to-teal-400 flex items-center justify-center">
-                <span className="text-4xl">⚡</span>
+                <img src="/gdsolar.png" className="w-100 h-60" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">
@@ -201,7 +201,7 @@ export default function HeroSection() {
                   салхины эрчим хүчний шийдлүүд.
                 </p>
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
-                  Үзэх →
+                  <Link href="/solar">Үзэх →</Link>
                 </Button>
               </div>
             </div>
