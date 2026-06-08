@@ -177,7 +177,7 @@ export default function ContactUs() {
         {/* Утасны дугаарууд */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <a
-            href="tel:+97686031058"
+            href="tel:+976860310586"
             className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors text-white px-6 py-3 rounded-xl text-sm font-medium"
           >
             <Phone size={16} className="text-[#C1E994]" />
@@ -190,6 +190,14 @@ export default function ContactUs() {
           >
             <Phone size={16} className="text-[#C1E994]" />
             +976-80101872
+          </a>
+
+          <a
+            href="tel:+97677760606"
+            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors text-white px-6 py-3 rounded-xl text-sm font-medium"
+          >
+            <Phone size={16} className="text-[#C1E994]" />
+            +976-77760606
           </a>
         </div>
       </div>

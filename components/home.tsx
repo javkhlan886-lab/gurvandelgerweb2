@@ -143,8 +143,12 @@ export default function HeroSection() {
       {/* 2. Hero Content Section */}
       <main className="max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-16 flex flex-col items-center text-center">
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-[68px] font-normal tracking-tight max-w-3xl leading-snug mb-6 text-[#1C1C1A]"></h1>
-        <p className="max-w-2xl text-base sm:text-lg text-gray-700 mb-10 px-2 sm:px-0"></p>
+        <h1 className="text-4xl sm:text-5xl md:text-[68px] font-normal tracking-tight max-w-3xl leading-snug mb-6 text-white drop-shadow-lg">
+          Монгол дэлхийг өөрчлөх
+        </h1>
+        <p className="max-w-2xl text-base sm:text-lg text-white/90 mb-10 px-2 sm:px-0 drop-shadow-md">
+          Гурван Дэлгэр ХХК нь барилга байгууламж, мэдээлэл технологи, сэргээгдэх эрчим хүчний салбарт олон жилийн туршлагатай. Бид чанартай үйлчилгээ, найдвартай түншлэл, болон тогтвортой хөгжлийн төлөө зүтгэж байна.
+        </p>
 
         {/* 4. Projects Section - 3 Cards Horizontally */}
         <section className="w-full mt-16 md:mt-20">
