@@ -49,10 +49,10 @@ export default function SolarPage() {
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
             <div>
               <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">
-                ДАВХАРЛАСАН НЭГДСЭН ЭРЧИМ ХҮЧ ХАДГАЛАХ СИСТЕМ
+                 НЭГДСЭН ЭРЧИМ ХҮЧ ХАДГАЛАХ СИСТЕМ
               </h1>
               <p className="text-base md:text-xl font-semibold text-[#00b5b5] mt-1">
-                5кВт·ц – 30кВт·ц + 5кВт – 10кВт
+                
               </p>
               <p className="text-xs text-gray-500 mt-1">ZETATECH</p>
             </div>
@@ -61,8 +61,8 @@ export default function SolarPage() {
           {/* Үндсэн зураг */}
           <div className="w-full rounded-xl overflow-hidden bg-gray-100 mb-8 flex items-center justify-center">
             <img
-              src="/solar/product-main.jpg"
-              alt="Давхарласан эрчим хүч хадгалах систем"
+              src="/projects/gdsolar.png"
+              alt=" эрчим хүч хадгалах систем"
               className="w-full max-h-96 object-contain"
             />
           </div>
@@ -75,7 +75,7 @@ export default function SolarPage() {
             </p>
             <div className="w-full rounded-xl overflow-hidden bg-white flex items-center justify-center p-4">
               <img
-                src="/solar/inverter-brands.jpg"
+                src="/projects/inverter.png"
                 alt="Нийцтэй инвертор брэндүүд"
                 className="w-full max-h-64 object-contain"
               />
@@ -118,7 +118,7 @@ export default function SolarPage() {
           {/* Зураглал */}
           <div className="w-full rounded-xl overflow-hidden bg-gray-50 mb-6 p-4 flex items-center justify-center">
             <img
-              src="/solar/drawing-5kw.jpg"
+              src="/projects/5kw.png"
               alt="5кВт загварын зураглал"
               className="w-full max-h-48 object-contain"
             />
@@ -350,7 +350,7 @@ export default function SolarPage() {
 
           <div className="w-full rounded-xl overflow-hidden bg-gray-50 mb-6 p-4 flex items-center justify-center">
             <img
-              src="/solar/drawing-10kw.jpg"
+              src="/projects/5kw.png"
               alt="10кВт загварын зураглал"
               className="w-full max-h-48 object-contain"
             />
@@ -706,18 +706,12 @@ export default function SolarPage() {
             </div>
             <div className="w-full rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center">
               <img
-                src="/solar/connection-diagram.jpg"
+                src="/projects/connection.png"
                 alt="Холболтын схем"
                 className="w-full max-h-72 object-contain"
               />
             </div>
-            <div className="w-full rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center">
-              <img
-                src="/solar/home-system.jpg"
-                alt="Гэрийн систем"
-                className="w-full max-h-72 object-contain"
-              />
-            </div>
+            
             <div className="text-xs text-gray-500 flex gap-4 justify-center flex-wrap">
               <span>
                 <span className="text-red-500 font-bold">——</span> AC кабель
@@ -740,7 +734,7 @@ export default function SolarPage() {
           </h2>
           <div className="w-full rounded-xl overflow-hidden bg-gray-100 mb-6 flex items-center justify-center">
             <img
-              src="/solar/applications.jpg"
+              src="/projects/usage solar.png"
               alt="Хэрэглээний салбарууд"
               className="w-full max-h-72 object-contain"
             />

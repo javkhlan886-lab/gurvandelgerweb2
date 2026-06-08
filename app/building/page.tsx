@@ -11,8 +11,8 @@ const projects = [
     description:
       "Хайлуулах үйлдвэрийн барилгын дээвэр, хана дүүргэлт, шал талбай цутгалтын ажлыг гүйцэтгэсэн.",
     images: [
-      "/projects/han-altai-2022-1.jpg",
-      "/projects/han-altai-2022-2.jpg",
+      "/projects/uusmal.png",
+      "/projects/uusmal2.png",
     ],
     tags: ["Барилга угсралт", "Дээвэр", "Хана дүүргэлт"],
   },
@@ -23,9 +23,9 @@ const projects = [
     description:
       "Урвалжийн агуулах барилгыг ерөнхий гүйцэтгэгчээр ажиллан бүрэн дуусгаж, Улсын комисст хүлээлгэн өгч ашиглалтад оруулсан.",
     images: [
-      "/projects/han-altai-2023-1.jpg",
-      "/projects/han-altai-2023-2.jpg",
-      "/projects/han-altai-2023-3.jpg",
+      "/projects/object1.png",
+      "/projects/object2.png",
+      "/projects/object3.png",
     ],
     tags: ["Ерөнхий гүйцэтгэгч", "Агуулах барилга", "Улсын комисс"],
   },
@@ -35,7 +35,11 @@ const projects = [
     title: "Монголын нууц товчоо цогцолборын интерьер",
     description:
       "Хэнтий аймаг, Дэлгэрхаан сумд байрлах Монголын нуур товчоо цогцолборын интерьерийн ажлыг бүтэн дуусгасан.",
-    images: ["/projects/khasu-2023-1.jpg"],
+    images: ["/projects/tour1.png",
+      "/projects/tour2.png",
+      "/projects/tour3.png"
+    ],
+    
     tags: ["Интерьер", "Цогцолбор", "Хэнтий аймаг"],
   },
   {
@@ -45,8 +49,8 @@ const projects = [
     description:
       "Төв аймаг, Лүн суманд байрлах уурхайн ажилчдын орон сууцны барилгын 124м×14м барилгын суурь болон ханын угсралтын ажлыг гүйцэтгэсэн.",
     images: [
-      "/projects/han-altai-2024-house-1.jpg",
-      "/projects/han-altai-2024-house-2.jpg",
+      "/projects/object4.png",
+      "/projects/object5.png",
     ],
     tags: ["Орон сууц", "Суурь угсралт", "Төв аймаг — Лүн сум"],
   },
@@ -57,9 +61,8 @@ const projects = [
     description:
       "Төв аймаг, Лүн суманд байрлах уурхайн Оффис болон гал тогооны барилгын 62м×14м барилгын бетон хийц зэрэг томоохон ажлуудыг гүйцэтгэсэн.",
     images: [
-      "/projects/han-altai-2024-office-1.jpg",
-      "/projects/han-altai-2024-office-2.jpg",
-      "/projects/han-altai-2024-office-3.jpg",
+      "/projects/object6.png",
+    
     ],
     tags: ["Оффис барилга", "Бетон хийц", "Төв аймаг — Лүн сум"],
   },
@@ -85,24 +88,24 @@ const projects = [
 
 const galleryImages = [
   {
-    src: "/projects/gallery-1.jpg",
+    src: "/projects/uusmal.png",
     caption: "Хан-Алтай Ресурс ХХК — агуулах барилгын бүтэц",
   },
   {
-    src: "/projects/gallery-2.jpg",
+    src: "/projects/uusmal2.png",
     caption: "Хан-Алтай Ресурс ХХК — ханын угсралтын ажил",
   },
   {
-    src: "/projects/gallery-3.jpg",
+    src: "/projects/tour1.png",
     caption: "Хасу-Мегаватт ХХК — цогцолборын барилга",
   },
-  { src: "/projects/gallery-4.jpg", caption: "Барилгын суурийн бетон цутгалт" },
+  { src: "/projects/object1.png", caption: "Барилгын суурийн бетон цутгалт" },
   {
-    src: "/projects/gallery-5.jpg",
+    src: "/projects/object3.png",
     caption: "Ажилчдын орон сууц — дотор засал",
   },
   {
-    src: "/projects/gallery-6.jpg",
+    src: "/projects/object6.png",
     caption: "Лүн сум — уурхайн барилгын ажил",
   },
 ];
