@@ -22,8 +22,8 @@ const telecomProjects = [
     description:
       "Камерын хяналтын системийг нийлүүлж, суурилуулах бүрэн ажлыг гүйцэтгэсэн.",
     images: [
-      // "/telecom/mds-1.jpg",
-      // "/telecom/mds-2.jpg",
+       "/projects/camera1.jpg",
+       "/projects/camera4.jpg",
     ],
     tags: ["Харилцаа холбоо", "Камерын хяналт", "Суурилуулалт"],
   },
@@ -34,20 +34,26 @@ const telecomProjects = [
     description:
       "Камерын хяналтын системийг нийлүүлж, суурилуулах ажлыг амжилттай дуусгасан.",
     images: [
-      // "/telecom/bloom-1.jpg",
-      // "/telecom/bloom-2.jpg",
+     "/projects/camera2.jpg",
+       "/projects/camera6.jpg",
     ],
     tags: ["Харилцаа холбоо", "Камерын хяналт", "Суурилуулалт"],
   },
   {
     year: "2025",
-    client: "Зет Ти И ХХК",
+    client: "Зэт Ти И ХХК",
     title: "60км газрын шилэн кабель татах ажил",
     description:
       "Төв аймгийн Мөнгөн морьт суманд 60 км газрын шилэн кабель татах ажлыг гүйцэтгэсэн.",
     images: [
-      // "/telecom/ztei-cable-1.jpg",
-      // "/telecom/ztei-cable-2.jpg",
+      "/projects/fo1.jpg",
+      "/projects/fo2.jpg",
+      "/projects/fo4.jpg",
+      "/projects/fo5.jpg",
+      "/projects/fo3.jpg",
+      "/projects/fo6.jpg",
+      "/projects/fo7.jpg",
+      "/projects/fo8.jpg",
     ],
     tags: ["Шилэн кабель", "Дэд бүтэц", "Төв аймаг — Мөнгөн морьт"],
   },
