@@ -166,9 +166,11 @@ export default function HeroSection() {
                   Бүтээн байгуулсан барилга байгууламжийн зураг төсөл, барилгын
                   ажил гүйцэтгэлийн мэдээлэл.
                 </p>
+                <Link href="/building">
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
-                  <Link href="/building">Үзэх →</Link>
+                  Үзэх →
                 </Button>
+                </Link>
               </div>
             </div>
 
@@ -185,9 +187,11 @@ export default function HeroSection() {
                   Мэдээлэл технологийн салбарт хийсэн төсөл, програм хангамжийн
                   хөгжүүлэлт, IT дэд бүтцийн шийдлүүд.
                 </p>
+                <Link href="/telecom">
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
-                  <Link href="/telecom"> Үзэх →</Link>
+                   Үзэх →
                 </Button>
+                </Link>
               </div>
             </div>
 
@@ -203,10 +207,11 @@ export default function HeroSection() {
                 <p className="text-gray-600 text-sm mb-4">
                   Сэргээгдэх эрчим хүчний салбарт хийсэн төсөл, нарны болон
                   салхины эрчим хүчний шийдлүүд.
-                </p>
+                </p><Link href="/solar">
                 <Button className="w-full bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 font-medium">
-                  <Link href="/solar">Үзэх →</Link>
+                   Үзэх→
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
