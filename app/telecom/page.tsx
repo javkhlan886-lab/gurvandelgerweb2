@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
+import Footer from "@/components/footer";
 const telecomProjects = [
   {
     year: "2024",
@@ -198,6 +198,7 @@ export default function TelecomPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
