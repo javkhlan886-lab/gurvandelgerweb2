@@ -6,7 +6,14 @@ import { Button } from "@/components/ui/button";
 import emailjs from "@emailjs/browser";
 import { Phone } from "lucide-react";
 
+import { useEffect } from "react";
+
 export default function ContactUs() {
+
+    useEffect(() => {
+    
+  }, []);
+
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -23,7 +30,7 @@ export default function ContactUs() {
     try {
       await emailjs.send(
   "service_h6t9avt",
-  "ylhhm4a",  // ✅ зөв template ID
+  "template_7ckmjfz",
   {
     name: form.name,
     company: form.company,
@@ -31,7 +38,7 @@ export default function ContactUs() {
     phone: form.phone,
     message: form.message,
   },
-  "JRjWny9rpe_4oYbVE",
+  "JRjWny9rpe_4oYbVE"  // ← буцааж нэм
 );
       setSent(true);
     } catch {
