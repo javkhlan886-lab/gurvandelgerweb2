@@ -123,6 +123,59 @@ export default function TelecomPage() {
         <button className="md:hidden text-white text-3xl">☰</button>
       </header>
 
+      <div className="max-w-7xl mx-auto px-4 md:px-6 mt-8 md:mt-12">
+        <div className="bg-white/90 rounded-xl px-6 md:px-10 py-8 md:py-10 flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex-1">
+            <h1 className="text-2xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">
+              ТОВЧ ТАНИЛЦУУЛГА
+            </h1>
+      <div className="space-y-4 text-sm md:text-base text-gray-700 leading-relaxed">
+  <p>
+    Өсөн хөгжиж буй мэдээллийн технологийн саларт хөл нийлүүлэн ажиллах зорилгоор манай байгууллага
+    2014 оноос эхлэн Харилцаа холбооны зохицуулах хороогоос <span className="font-medium text-gray-900">"Б" ангиллын</span> Монгол Улсын
+    нутаг дэвсгэрт харилцаа холбооны сүлжээ, дэд бүтцийн угсралт, суурилуулалтын ажил гүйцэтгэх
+    тусгай зөвшөөрлийг авч үйл ажиллагаа явуулж ирсэн.
+  </p>
+
+  <p>
+    Ирээдүйн чиг хандлагад тулгуурлан бид дараах салбарт үйл ажиллагаагаа өргөжүүлж байна:
+  </p>
+
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-0 list-none">
+    {[
+      { icon: "🌐", text: "Зүйлсийн интернет (IoT)" },
+      { icon: "💻", text: "Програм хангамжийн хөгжүүлэлт" },
+      { icon: "🏗️", text: "Барилгын гадна дотор холбоо дохиололын угсралт суурилуулалт" },
+      { icon: "📷", text: "Хяналтын камерийн шийдэл угсралт суурилуулалт" },
+      { icon: "🚁", text: "Тусгай зориулалтын дрон" },
+      { icon: "🤖", text: "Хиймэл оюун ухаанд суурилсан шийдлүүд" },
+      { icon: "🔗", text: "Мэдээллийн сүлжээ" },
+    ].map((item, i) => (
+      <li key={i} className="flex items-start gap-2 bg-gray-50 rounded-lg px-3 py-2">
+        <span className="mt-0.5">{item.icon}</span>
+        <span>{item.text}</span>
+      </li>
+    ))}
+  </ul>
+
+  <p>
+    Шаардлагатай боловсон хүчнээр бүрэн хангагдсан манай баг шинэ технологи, чанартай үйлчилгээ үзүүлэхэд
+    бэлэн байна. Соёлтой үйлчилгээ, шинэлэг үйлдвэрлэл, техник технологийн дэвшлийг үйл ажиллагаандаа
+    нэвтэрүүлэн ажиллахыг эрхэмлэн ажилладаг.
+  </p>
+</div>
+          </div>
+    {/* Зураг — баруун тал */}
+<div className="flex-shrink-0 w-full md:w-72 lg:w-80 rounded-2xl overflow-hidden shadow-lg bg-gray-200 aspect-[3/4] md:aspect-auto aspect-square">
+  <img
+    src="/projects/wallpaper3.png"
+    alt="Хамт олон"
+    className="w-full h-full object-contain bg-gray-100"
+  />
+</div>
+        </div>
+      </div>
+
       {/* Үндсэн агуулга */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14">
         {/* Гарчиг */}
@@ -135,6 +188,8 @@ export default function TelecomPage() {
             <p className="text-sm md:text-lg font-semibold text-gray-600 mt-1"></p>
           </div>
         </div>
+
+        
 
         {/* Төслүүдийн timeline */}
         <div className="relative">
