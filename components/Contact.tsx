@@ -22,18 +22,17 @@ export default function ContactUs() {
     setLoading(true);
     try {
       await emailjs.send(
-        "service_h6t9avt",
-        "template_7ckmjfz",
-        {
-          name: form.name,
-          company: form.company,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-          to_email: "javkhlan886@gmail.com",
-        },
-        "JRjWny9rpe_4oYbVE",
-      );
+  "service_h6t9avt",
+  "ylhhm4a",  // ✅ зөв template ID
+  {
+    name: form.name,
+    company: form.company,
+    email: form.email,
+    phone: form.phone,
+    message: form.message,
+  },
+  "JRjWny9rpe_4oYbVE",
+);
       setSent(true);
     } catch {
       alert("Илгээхэд алдаа гарлаа. Дахин оролдоно уу.");
