@@ -85,7 +85,7 @@ const telecomProjects = [
 
 export default function TelecomPage() {
   return (
-    <div className="w-full min-h-screen bg-cover bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased">
+    <div className="w-full min-h-screen bg-cover bg-center bg-fixed bg-[url(/telecowall4.png)] text-[#111111] font-sans antialiased">
       {/* Header */}
       <header className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between border-b border-gray-200/60">
         <div className="text-xl md:text-3xl font-normal tracking-tight cursor-pointer text-white/90">
