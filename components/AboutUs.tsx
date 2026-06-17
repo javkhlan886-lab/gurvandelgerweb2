@@ -195,6 +195,77 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
+
+         {/* Хуваагч */}
+        <div className="border-t-4 border-black" />
+
+<div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+  {/* Зураг */}
+  <div className="flex-shrink-0 flex flex-col items-center gap-3 w-full md:w-auto">
+    <div className="w-48 h-64 md:w-64 md:h-80 rounded-xl overflow-hidden shadow-lg bg-gray-200">
+      <img
+        src="/coo.jpg"
+        alt="Үйл ажиллагаа эрхэлсэн захирал"
+        className="w-full h-80% object-cover"
+      />
+    </div>
+    <p className="text-sm text-gray-600 text-center max-w-[200px]">
+      Гурвандэлгэр ХХК-ийн
+      <br />
+      Үйл ажиллагаа эрхэлсэн захирал
+    </p>
+    <p className="font-bold text-sm text-center">Ш.Баясгалан</p>
+  </div>
+
+  {/* Текст */}
+  <div className="flex-1 relative mt-10">
+    <div className="hidden md:block absolute -top-4 right-0 text-[#C1E994] text-8xl font-serif leading-none">
+      "
+    </div>
+
+    <h1 className="text-2xl md:text-4xl font-black text-gray-900 mb-4 md:mb-6 tracking-tight">
+      ҮЙЛ АЖИЛЛАГААНЫ ТӨГС ТӨГӨЛДӨР БАЙДАЛ БОЛ АМЖИЛТЫН ҮНДЭС
+    </h1>
+
+    <div className="border-l-4 border-gray-800 pl-4 mb-6">
+     
+      <p className="text-xs md:text-sm font-bold italic text-gray-800 leading-relaxed mt-2">
+        БИД ӨДӨР ТУТМЫН ҮЙЛ АЖИЛЛАГААНДАА ЧАНАР, АЮУЛГҮЙ БАЙДАЛ, ҮР АШГИЙГ
+        НЭН ТЭРГҮҮНД ТАВЬЖ, ХАРИЛЦАГЧ БҮРИЙН ИТГЭЛИЙГ ХАДГАЛАХЫН ТӨЛӨӨ
+        ТУУШТАЙ АЖИЛЛАДАГ.
+      </p>
+    </div>
+
+    <p className="text-xs md:text-sm text-gray-700 leading-relaxed mb-4">
+      Манай хамт олон байгууллагынхаа стратеги зорилгыг бодит ажил хэрэг
+      болгохын төлөө өдөр бүр хариуцлагатай, үр бүтээлтэй ажиллаж байна.
+      Бид үйл ажиллагааны бүхий л шатанд чанарын удирдлага, аюулгүй
+      ажиллагаа, бүтээмжийг тасралтгүй сайжруулахыг зорьж, орчин үеийн
+      технологи, инновацын шийдлүүдийг нэвтрүүлэн ажилладаг.
+    </p>
+
+    <p className="text-xs md:text-sm text-gray-700 leading-relaxed mb-4">
+      Байгууллагын амжилт нь зөвхөн хөрөнгө оруулалт, техник технологиос
+      бус чадварлаг боловсон хүчин, хамтын ажиллагаа, зөв зохион
+      байгуулалтаас шалтгаалдаг. Иймээс бид ажилтан бүрийн ур чадварыг
+      хөгжүүлэх, хөдөлмөрийн аюулгүй орчныг бүрдүүлэх, хамтын үнэ цэнийг
+      бий болгоход онцгой анхаарал хандуулдаг.
+    </p>
+
+    <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
+      Өнөөдөр бидний хүрсэн үр дүн бүхэн хамтран ажиллагч байгууллагууд,
+      харилцагчид болон үнэнч ажилтан албан хаагчдын хичээл зүтгэлийн үр
+      шим юм. Цаашид ч бид үйл ажиллагааны чанар, үр ашгийг улам
+      нэмэгдүүлж, харилцагчдынхаа итгэлийг даасан найдвартай түнш байх
+      болно. Бидэнтэй хамтран ажиллаж буй нийт түншүүддээ талархал
+      илэрхийлж, эрүүл энх, сайн сайхан бүхнийг хүсэн ерөөе.
+    </p>
+  </div>
+</div>
+```
+
+
+
       </div>
     </div>
   );
