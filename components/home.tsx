@@ -129,6 +129,14 @@ export default function HeroSection() {
           >
             Нийгмийн хариуцлага
           </Link>
+          <a
+            href="https://product.gurvandelger.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#C1E994] transition-colors"
+          >
+            Бүтээгдхүүн
+          </a>
           <Button className="w-full md:w-auto bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center justify-center">
             <Link href="/contact" className="w-full text-center">
               Холбоо барих
