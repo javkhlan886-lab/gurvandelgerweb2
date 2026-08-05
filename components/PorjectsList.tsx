@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import Header from "./Header";
 
 export default function Projects() {
   const [selected, setSelected] = useState<number | null>(null);
@@ -67,88 +66,63 @@ export default function Projects() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-cover bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased">
-      {/* Header */}
-      <header className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between border-b border-gray-200/60">
-        <div className="text-xl md:text-3xl font-normal tracking-tight cursor-pointer text-white/90">
-          <a href="/">Гурвандэлгэр ХХК</a>
-        </div>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
-          <Link
-            href="/about"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Бидний тухай
-          </Link>
-          <Link
-            href="/partner"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Партнер байгууллагууд
-          </Link>
-          <Link
-            href="/projects"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Хийсэн төсөлүүд
-          </Link>
-          <Link
-            href="/social"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Нийгмийн хариуцлага
-          </Link>
-          <Button className="bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium">
-            <Link href="/contact">Холбоо барих</Link>
-          </Button>
-        </nav>
-        <button className="md:hidden text-white text-3xl">☰</button>
-      </header>
+    <div className="relative w-full min-h-screen overflow-hidden bg-white text-slate-900 font-sans antialiased">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-indigo-400/15 blur-3xl" />
+        <div className="absolute top-1/3 -right-32 h-[26rem] w-[26rem] rounded-full bg-cyan-300/15 blur-3xl" />
+      </div>
+
+      <Header />
 
       {/* Үндсэн агуулга */}
-      <div className="bg-white mt-6">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
+            Портфолио
+          </span>
+          <h2 className="mt-5 text-2xl md:text-4xl font-bold tracking-tight text-slate-900">
             Хийсэн төсөлүүд
           </h2>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {projects.map((project, i) => (
-              <div
-                key={i}
-                onClick={() => setSelected(i)}
-                className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all cursor-pointer hover:-translate-y-1 bg-white"
-              >
-                {/* Логоны хэсэг */}
-                <div className="h-48 bg-gray-50 flex items-center justify-center p-6">
-                  <img
-                    src={project.logo}
-                    alt={project.name}
-                    className="max-h-24 max-w-[180px] object-contain"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                </div>
-
-                {/* Текстийн хэсэг */}
-                <div className="p-4 border-t border-gray-100">
-                  <p className="font-semibold text-gray-900 text-sm mb-1">
-                    {project.name}
-                  </p>
-                  <p className="text-xs text-gray-500">{project.desc}</p>
-                  <p className="text-xs text-[#C1E994] font-medium mt-2"></p>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {projects.map((project, i) => (
+            <div
+              key={i}
+              onClick={() => setSelected(i)}
+              className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-200 transition-all cursor-pointer hover:-translate-y-1 bg-white"
+            >
+              {/* Логоны хэсэг */}
+              <div className="h-48 bg-slate-50 flex items-center justify-center p-6">
+                <img
+                  src={project.logo}
+                  alt={project.name}
+                  className="max-h-24 max-w-[180px] object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
               </div>
-            ))}
-          </div>
+
+              {/* Текстийн хэсэг */}
+              <div className="p-4 border-t border-slate-100">
+                <p className="font-semibold text-slate-900 text-sm mb-1">
+                  {project.name}
+                </p>
+                <p className="text-xs text-slate-500">{project.desc}</p>
+                <p className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600">
+                  Дэлгэрэнгүй үзэх
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Modal — дэлгэрэнгүй */}
       {selected !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm px-4"
           onClick={() => setSelected(null)}
         >
           <div
@@ -158,7 +132,7 @@ export default function Projects() {
             {/* Хаах товч */}
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700"
             >
               <X size={20} />
             </button>
@@ -175,17 +149,17 @@ export default function Projects() {
               />
             </div>
 
-            <h3 className="text-lg font-bold text-gray-900 mb-1">
+            <h3 className="text-lg font-bold text-slate-900 mb-1">
               {projects[selected].name}
             </h3>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-slate-500 mb-4">
               {projects[selected].desc}
             </p>
 
             <ul className="space-y-3">
               {projects[selected].items.map((item, j) => (
-                <li key={j} className="flex gap-2 text-sm text-gray-700">
-                  <span className="text-[#C1E994] font-bold mt-0.5">✓</span>
+                <li key={j} className="flex gap-2 text-sm text-slate-700">
+                  <span className="text-indigo-600 font-bold mt-0.5">✓</span>
                   <span>{item}</span>
                 </li>
               ))}

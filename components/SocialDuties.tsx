@@ -1,133 +1,97 @@
 import React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Header from "./Header";
 
-import { ArrowRight } from "lucide-react";
+const SECTIONS = [
+  {
+    icon: "🌍",
+    title: "Байгалийн орчны хамгаалал",
+    items: [
+      "Хог хаягдал цэвэрлэгээ, дахин ашиглалтын политик баримталдаг",
+      "Сэргээгдэх эрчим хүчний төсөлд идэвхтэй оролцож байна",
+    ],
+  },
+  {
+    icon: "👨‍💼",
+    title: "Ажилтнуудын хөгжил, сучуулалт",
+    items: [
+      "Үйлчлүүлэгч, түнш, ажилтнууд болон нийгмийн үнэ цэнэ үйл ажиллагаандаа төвлөрүүлэн ажилладаг",
+      "Чадварлаг мэргэжилтнүүдийн сургалт, хөгжүүлэлтэд санхүүгийн хэмжээгээр дараалан хөрөнгө оруулалт хийдэг",
+      "Ажилтнуудын эрүүл мэнд, аюулгүй байдалд онцгой анхаарал хандуулдаг",
+    ],
+  },
+  {
+    icon: "🤝",
+    title: "Нийгмийн түншлэл",
+    items: [
+      "Сургуулиуд, эмнэлгүүдтэй хамтран ажиллах замаар нийгмийн сайн сайхныг дэмжиж байна",
+      "Аймаг, сумын хөгжилтэй холбоотой төслүүдэд идэвхтэй оролцдог",
+    ],
+  },
+  {
+    icon: "📊",
+    title: "Ил тод засаглал",
+    items: [
+      "Үйл ажиллагаандаа ёс зүйтэй засаглал, итгэл, шударга байдлыг үндэс болгож ажилладаг",
+      "Хүний эрхийн зарчмыг сайтар баримталдаг",
+      "Ажилын үйл ажиллагааны ил байдлыг дэмждэг",
+    ],
+  },
+  {
+    icon: "⛏️",
+    title: "Уул уурхайн ажилтнуудын эрхийн хамгаалал",
+    items: [
+      "Уул уурхайн салбарт ажиллаж байгаа уулын төлөвлөгөөнөс сэргээн босгон төлөвлөгөө бий болгож байна",
+      "Уул уурхайн ажилтнуудын нийгмийн даатгал, аюулгүй байдлын ажлыг сайтар явуулдаг",
+    ],
+  },
+];
 
 export default function SocialDuties() {
-  // Зургуудын дата (Та өөрийн зургаар солиорой)
-  const galleryImages = [];
-
   return (
-    <div className="w-full min-h-screen bg-cover bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased selection:bg-lime-400">
-      {/* 1. Header / Navigation */}
-      <header className="max-w-7xl mx-auto px-4 md:px-6 py-5 flex items-center justify-between border-b border-gray-200/60">
-        {/* Logo */}
-        <div className="text-2xl md:text-3xl font-normal tracking-tight cursor-pointer text-white/90 ">
-          <a href="/"> Гурвандэлгэр ХХК</a>
+    <div className="relative w-full min-h-screen overflow-hidden bg-white text-slate-900 font-sans antialiased">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-indigo-400/15 blur-3xl" />
+        <div className="absolute top-1/3 -right-32 h-[26rem] w-[26rem] rounded-full bg-cyan-300/15 blur-3xl" />
+      </div>
+
+      <Header />
+
+      <div className="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-20">
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
+            Нийгмийн хариуцлага
+          </span>
+          <h1 className="mt-5 text-2xl md:text-4xl font-bold tracking-tight text-slate-900">
+            Байгууллагын нийгмийн хариуцлага
+          </h1>
+          <p className="mt-4 text-slate-600 leading-relaxed">
+            Гурван Дэлгэр ХХК-ийн байгууллага байгуулагдсан үеэс эхлэн
+            бизнесийн амжилтыг нийгэмдээ бүтээж буй үнэ цэнээр хэмжиж ирлээ.
+          </p>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90 drop-shadow-sm">
-          <Link
-            href="/about"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Бидний тухай
-          </Link>
-          <Link
-            href="/partner"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Партнер байгууллагууд
-          </Link>
-          <Link
-            href="/projects"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Хийсэн төсөлүүд
-          </Link>
-          <Link
-            href="/social"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Нийгмийн хариуцлага
-          </Link>
-
-          {/* Холбоо барих Button */}
-          <Button
-            className="bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium transition-all shadow-sm flex items-center"
-          >
-            <Link href="/contact">Холбоо барих</Link>
-          </Button>
-        </nav>
-        <button className="md:hidden text-white text-3xl">☰</button>
-      </header>
-
-      {/* Үндсэн агуулга */}
-      <div className="bg-white/95 mt-6 mb-8">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-16">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
-            Нийгмийн хариуцлага
-          </h1>
-          
-          <div className="space-y-8">
-            {/* Ерөнхий мэдээлэл */}
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-gray-900">
-                Байгууллагын нийгмийн хариуцлага
+        <div className="space-y-6">
+          {SECTIONS.map((section, i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 md:p-8 hover:border-indigo-200 hover:shadow-md transition-all"
+            >
+              <h2 className="text-lg md:text-xl font-semibold text-slate-900 flex items-center gap-3 mb-4">
+                <span className="text-2xl">{section.icon}</span>
+                {section.title}
               </h2>
-              <p className="text-gray-700 leading-relaxed">
-                Гурван Дэлгэр ХХК-ийн байгууллага  байгуулагдсан үеэс эхлэн бизнесийн амжилтыг  нийгэмдээ бүтээж буй үнэ цэнээр хэмжиж ирлээ.
-              </p>
-            </div>
-            {/* Байгалийн орчны хамгаалал */}
-            <div className="space-y-3 border-l-4 border-[#C1E994] pl-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                🌍 Байгалийн орчны хамгаалал
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Хог хаягдал цэвэрлэгээ, дахин ашиглалтын политик баримталдаг</li>
-                <li>✓ Сэргээгдэх эрчим хүчний төсөлд идэвхтэй оролцож байна</li>
+              <ul className="space-y-2">
+                {section.items.map((item, j) => (
+                  <li key={j} className="flex gap-2 text-sm text-slate-600">
+                    <span className="text-indigo-600 font-bold mt-0.5">
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-
-            {/* Өндөрлөгсөн ажилтан */}
-
-            <div className="space-y-3 border-l-4 border-[#C1E994] pl-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                👨‍💼 Ажилтнуудын хөгжил, сучуулалт
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Үйлчлүүлэгч, түнш, ажилтнууд болон нийгмийн үнэ цэнэ үйл ажиллагаандаа төвлөрүүлэн ажилладаг</li>
-                <li>✓ Чадварлаг мэргэжилтнүүдийн сургалт, хөгжүүлэлтэд санхүүгийн хэмжээгээр дараалан хөрөнгө оруулалт хийдэг</li>
-                <li>✓ Ажилтнуудын эрүүл мэнд, аюулгүй байдалд онцгой анхаарал хандуулдаг</li>
-              </ul>
-            </div>
-
-            {/* Нийгмийн түншлэл */}
-            <div className="space-y-3 border-l-4 border-[#C1E994] pl-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                🤝 Нийгмийн түншлэл
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Сургуулиуд, эмнэлгүүдтэй хамтран ажиллах замаар нийгмийн сайн сайхныг дэмжиж байна</li>
-                <li>✓ Аймаг, сумын хөгжилтэй холбоотой төслүүдэд идэвхтэй оролцдог</li>
-              </ul>
-            </div>
-
-            {/* Ил тод засаглал */}
-            <div className="space-y-3 border-l-4 border-[#C1E994] pl-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                📊 Ил тод засаглал
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Үйл ажиллагаандаа ёс зүйтэй засаглал, итгэл, шударга байдлыг үндэс болгож ажилладаг</li>
-                <li>✓ Хүний эрхийн зарчмыг сайтар баримталдаг</li>
-                <li>✓ Ажилын үйл ажиллагааны ил байдлыг дэмждэг</li>
-              </ul>
-            </div>
-
-            {/* Уул уурхайн хариуцлага */}
-            <div className="space-y-3 border-l-4 border-[#C1E994] pl-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                ⛏️ Уул уурхайн ажилтнуудын эрхийн хамгаалал
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>✓ Уул уурхайн салбарт ажиллаж байгаа уулын төлөвлөгөөнөс сэргээн босгон төлөвлөгөө бий болгож байна</li>
-                <li>✓ Уул уурхайн ажилтнуудын нийгмийн даатгал, аюулгүй байдлын ажлыг сайтар явуулдаг</li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

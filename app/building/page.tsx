@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
+import Header from "@/components/Header";
 
 const projects = [
   {
@@ -112,65 +111,38 @@ const galleryImages = [
 
 export default function BuildingPage() {
   return (
-    <div className="w-full min-h-screen bg-cover bg-[url(/Gurvandelgercity.png)] text-[#111111] font-sans antialiased">
-      {/* Header */}
-      <header className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between border-b border-gray-200/60">
-        <div className="text-xl md:text-3xl font-normal tracking-tight cursor-pointer text-white/90">
-          <a href="/">Гурвандэлгэр ХХК</a>
-        </div>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-white/90">
-          <Link
-            href="/about"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Бидний тухай
-          </Link>
-          <Link
-            href="/partner"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Партнер байгууллагууд
-          </Link>
-          <Link
-            href="/building"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Хийсэн төсөлүүд
-          </Link>
-          <Link
-            href="/social"
-            className="hover:text-[#C1E994] transition-colors"
-          >
-            Нийгмийн хариуцлага
-          </Link>
-          <Button className="bg-[#C1E994] hover:bg-[#b2df82] text-gray-900 px-4 py-2 rounded-full text-xs font-medium">
-            <Link href="/contact">Холбоо барих</Link>
-          </Button>
-        </nav>
-        <button className="md:hidden text-white text-3xl">☰</button>
-      </header>
+    <div className="relative w-full min-h-screen overflow-hidden bg-white text-slate-900 font-sans antialiased">
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-indigo-400/15 blur-3xl" />
+        <div className="absolute top-1/3 -right-32 h-[26rem] w-[26rem] rounded-full bg-cyan-300/15 blur-3xl" />
+      </div>
+
+      <Header />
 
       {/* Товч танилцуулга */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 mt-8 md:mt-12">
-        <div className="bg-white/90 rounded-xl px-6 md:px-10 py-8 md:py-10 flex flex-col md:flex-row gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 pt-10 md:pt-14">
+        <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
+          Барилга Байгууламж
+        </span>
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-white shadow-sm px-6 md:px-10 py-8 md:py-10 flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1">
-            <h1 className="text-2xl md:text-4xl font-black text-gray-900 mb-4 tracking-tight">
+            <h1 className="text-2xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">
               ТОВЧ ТАНИЛЦУУЛГА
             </h1>
-            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed">
               "Гурван дэлгэр" ХХК нь худалдаа үйлчилгээ, барилга угсралт,
               сэргээгдэх эрчим хүч, харилцаа холбооны шугам сүлжээний угсралт
               суурилуулалтын үйл ажиллагаа эрхлэх зорилготойгоор{" "}
-              <span className="font-bold text-gray-900">2011 онд</span> үүсгэн
+              <span className="font-bold text-slate-900">2011 онд</span> үүсгэн
               байгуулагдсан. Манай компани нь мэргэжлийн өндөр ур чадвартай
               гэрээт болон үндсэн нийлсэн{" "}
-              <span className="font-bold text-gray-900">50-60 гаруй</span>{" "}
+              <span className="font-bold text-slate-900">50-60 гаруй</span>{" "}
               боловсон хүчнийг бүрдүүлж, соёлтой үйлчилгээ, шинэлэг үйлдвэрлэл,
               техник технологийн дэвшлийг үйл ажиллагаандаа нэвтэрүүлэн
               ажиллахыг эрхэмлэн ажилладаг.
             </p>
           </div>
-          <div className="flex-shrink-0 w-full md:w-80 h-52 rounded-xl overflow-hidden shadow-lg bg-gray-200">
+          <div className="flex-shrink-0 w-full md:w-80 h-52 rounded-xl overflow-hidden shadow-lg bg-slate-100">
             <img
               src="/projects/team.png"
               alt="Хамт олон"
@@ -184,16 +156,14 @@ export default function BuildingPage() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14">
         {/* Гарчиг */}
         <div className="mb-8 md:mb-12">
-          <div className="inline-block bg-white/90 rounded-xl px-6 md:px-10 py-6">
-            <h2 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">
-              БИДНИЙ ГҮЙЦЭТГЭСЭН АЖЛУУДААС
-            </h2>
-          </div>
+          <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">
+            БИДНИЙ ГҮЙЦЭТГЭСЭН АЖЛУУДААС
+          </h2>
         </div>
 
         {/* Төслүүдийн timeline */}
         <div className="relative">
-          <div className="hidden md:block absolute left-[88px] top-0 bottom-0 w-0.5 bg-[#C1E994]/60" />
+          <div className="hidden md:block absolute left-[88px] top-0 bottom-0 w-0.5 bg-indigo-200" />
           <div className="flex flex-col gap-8">
             {projects.map((project, index) => (
               <div
@@ -202,28 +172,28 @@ export default function BuildingPage() {
               >
                 {/* Он */}
                 <div className="flex-shrink-0 flex md:flex-col items-center md:items-end gap-3 md:gap-1 w-full md:w-20">
-                  <div className="bg-[#C1E994] text-gray-900 font-black text-sm px-3 py-1.5 rounded-lg shadow-sm">
+                  <div className="bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-black text-sm px-3 py-1.5 rounded-lg shadow-sm">
                     {project.year}
                   </div>
-                  <div className="hidden md:block w-3 h-3 rounded-full bg-[#C1E994] mt-1 relative z-10" />
+                  <div className="hidden md:block w-3 h-3 rounded-full bg-indigo-500 mt-1 relative z-10" />
                 </div>
 
                 {/* Агуулга */}
-                <div className="flex-1 bg-white/90 rounded-xl p-5 md:p-6 shadow-sm">
-                  <p className="text-xs text-gray-500 font-medium mb-1">
+                <div className="flex-1 rounded-xl border border-slate-200 bg-white p-5 md:p-6 shadow-sm hover:border-indigo-200 hover:shadow-md transition-all">
+                  <p className="text-xs text-slate-500 font-medium mb-1">
                     {project.client}
                   </p>
-                  <h3 className="text-base md:text-lg font-black text-gray-900 mb-2">
+                  <h3 className="text-base md:text-lg font-black text-slate-900 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full"
+                        className="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded-full"
                       >
                         {tag}
                       </span>
@@ -234,7 +204,7 @@ export default function BuildingPage() {
                       {project.images.map((img, i) => (
                         <div
                           key={i}
-                          className="h-32 rounded-lg overflow-hidden bg-gray-200"
+                          className="h-32 rounded-lg overflow-hidden bg-slate-100"
                         >
                           <img
                             src={img}
@@ -253,16 +223,14 @@ export default function BuildingPage() {
 
         {/* Зургийн галерей */}
         <div className="mt-14">
-          <div className="inline-block bg-white/90 rounded-xl px-6 py-4 mb-6">
-            <h2 className="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
-              БАРИЛГЫН АЖЛЫН ЗУРГУУД
-            </h2>
-          </div>
+          <h2 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight mb-6">
+            БАРИЛГЫН АЖЛЫН ЗУРГУУД
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {galleryImages.map((img, i) => (
               <div
                 key={i}
-                className="group relative rounded-xl overflow-hidden shadow-md bg-gray-300 h-48 md:h-60"
+                className="group relative rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-slate-100 h-48 md:h-60"
               >
                 <img
                   src={img.src}
