@@ -30,9 +30,9 @@ const DIVISIONS = [
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-white text-slate-900 font-sans antialiased selection:bg-indigo-200">
+    <div className="relative w-full min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-indigo-200">
       {/* Decorative background: gradient mesh + dot grid */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-indigo-400/20 blur-3xl" />
         <div className="absolute top-24 -right-32 h-[26rem] w-[26rem] rounded-full bg-cyan-300/25 blur-3xl" />
         <div className="absolute bottom-0 left-1/3 h-[24rem] w-[24rem] rounded-full bg-violet-300/15 blur-3xl" />

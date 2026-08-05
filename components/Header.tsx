@@ -14,41 +14,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-3.5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <Link
           href="/"
-          className="flex items-center gap-3.5 group select-none cursor-pointer"
+          className="group flex items-center select-none cursor-pointer"
         >
-          <svg
-            viewBox="0 0 200 200"
-            className="w-11 h-11 md:w-12 md:h-12 filter drop-shadow-[0_3px_5px_rgba(0,0,0,0.25)] transition-transform group-hover:scale-105 duration-300"
-          >
-            <defs>
-              <linearGradient id="realGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#FFF293" />
-                <stop offset="25%" stopColor="#F4BF24" />
-                <stop offset="50%" stopColor="#FFFFFF" />
-                <stop offset="75%" stopColor="#DF9F00" />
-                <stop offset="100%" stopColor="#8A5A00" />
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="90" fill="none" stroke="url(#realGold)" strokeWidth="11" />
-            <circle cx="100" cy="100" r="77" fill="none" stroke="url(#realGold)" strokeWidth="2" />
-            <path d="M 44 75 A 64 64 0 0 1 156 75" fill="none" stroke="url(#realGold)" strokeWidth="15" strokeLinecap="butt" />
-            <path d="M 44 125 A 64 64 0 0 0 156 125" fill="none" stroke="url(#realGold)" strokeWidth="15" strokeLinecap="butt" />
-            <path d="M 64 100 A 36 36 0 0 1 136 100" fill="none" stroke="url(#realGold)" strokeWidth="15" strokeLinecap="butt" />
-            <path d="M 64 100 A 36 36 0 0 0 136 100" fill="none" stroke="url(#realGold)" strokeWidth="15" strokeLinecap="butt" />
-          </svg>
-
-          <span
-            className="text-xl md:text-2xl font-black tracking-wide uppercase font-sans italic"
-            style={{
-              background:
-                "linear-gradient(135deg, #FFF59E 0%, #F5B800 30%, #FFFCE6 55%, #D49200 85%, #7A4F00 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0px 0px 2px rgba(0,0,0,0.15))",
-            }}
-          >
-            Гурван Дэлгэр ХХК
-          </span>
+          <img
+            src="/logo.jpg"
+            alt="Гурван Дэлгэр ХХК"
+            className="h-9 md:h-11 w-auto object-contain mix-blend-multiply transition-transform group-hover:scale-105 duration-300"
+          />
         </Link>
 
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-600">

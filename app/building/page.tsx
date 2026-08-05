@@ -111,8 +111,8 @@ const galleryImages = [
 
 export default function BuildingPage() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-white text-slate-900 font-sans antialiased">
-      <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="relative w-full min-h-screen bg-white text-slate-900 font-sans antialiased">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-indigo-400/15 blur-3xl" />
         <div className="absolute top-1/3 -right-32 h-[26rem] w-[26rem] rounded-full bg-cyan-300/15 blur-3xl" />
       </div>
