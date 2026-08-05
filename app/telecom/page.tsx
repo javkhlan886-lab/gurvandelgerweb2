@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Footer from "@/components/footer";
 import Header from "@/components/Header";
 
@@ -163,11 +164,13 @@ export default function TelecomPage() {
             </div>
           </div>
           {/* Зураг — баруун тал */}
-          <div className="flex-shrink-0 w-full md:w-72 lg:w-80 rounded-2xl overflow-hidden shadow-lg bg-slate-100 aspect-[3/4] md:aspect-auto aspect-square">
-            <img
+          <div className="relative flex-shrink-0 w-full md:w-72 lg:w-80 rounded-2xl overflow-hidden shadow-lg bg-slate-100 aspect-[3/4] md:aspect-auto aspect-square">
+            <Image
               src="/projects/wallpaper3.png"
               alt="Хамт олон"
-              className="w-full h-full object-contain bg-slate-50"
+              fill
+              sizes="(min-width: 768px) 320px, 100vw"
+              className="object-contain bg-slate-50"
             />
           </div>
         </div>
@@ -272,12 +275,14 @@ export default function TelecomPage() {
                     {project.images.map((img, i) => (
                       <div
                         key={i}
-                        className="h-40 rounded-lg overflow-hidden bg-slate-100"
+                        className="relative h-40 rounded-lg overflow-hidden bg-slate-100"
                       >
-                        <img
+                        <Image
                           src={img}
                           alt={`${project.title} ${i + 1}`}
-                          className="w-full h-full object-cover"
+                          fill
+                          sizes="(min-width: 768px) 200px, 45vw"
+                          className="object-cover"
                         />
                       </div>
                     ))}

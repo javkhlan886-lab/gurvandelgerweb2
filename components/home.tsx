@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "./Header";
 
 const DIVISIONS = [
@@ -90,11 +91,14 @@ export default function HeroSection() {
 
         {/* Hero image with gradient glow border */}
         <div className="mt-16 w-full rounded-3xl bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-400 p-[3px] shadow-2xl shadow-indigo-500/20">
-          <div className="overflow-hidden rounded-[calc(1.5rem-3px)]">
-            <img
+          <div className="relative h-64 md:h-[420px] overflow-hidden rounded-[calc(1.5rem-3px)]">
+            <Image
               src="/Gurvandelgercity.png"
               alt="Гурван Дэлгэр ХХК"
-              className="h-64 w-full object-cover md:h-[420px]"
+              fill
+              priority
+              sizes="(min-width: 1280px) 1216px, 100vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -114,11 +118,13 @@ export default function HeroSection() {
                 key={division.href}
                 className="group relative rounded-2xl border border-slate-200 bg-white text-left shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/10"
               >
-                <div className="h-48 overflow-hidden bg-slate-100">
-                  <img
+                <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <Image
                     src={division.image}
                     alt={division.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">

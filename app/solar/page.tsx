@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Footer from "@/components/footer";
 import Header from "@/components/Header";
 
@@ -30,10 +31,13 @@ export default function SolarPage() {
 
           {/* Үндсэн зураг */}
           <div className="w-full rounded-xl overflow-hidden bg-slate-100 mb-8 flex items-center justify-center">
-            <img
+            <Image
               src="/projects/gdsolar.png"
               alt=" эрчим хүч хадгалах систем"
-              className="w-full max-h-96 object-contain"
+              width={1648}
+              height={640}
+              sizes="(min-width: 768px) 700px, 100vw"
+              className="w-full h-auto max-h-96 object-contain"
             />
           </div>
 
@@ -44,10 +48,13 @@ export default function SolarPage() {
               боломжтой
             </p>
             <div className="w-full rounded-xl overflow-hidden bg-white flex items-center justify-center p-4">
-              <img
+              <Image
                 src="/projects/inverter.png"
                 alt="Нийцтэй инвертор брэндүүд"
-                className="w-full max-h-64 object-contain"
+                width={902}
+                height={418}
+                sizes="(min-width: 768px) 700px, 100vw"
+                className="w-full h-auto max-h-64 object-contain"
               />
             </div>
           </div>
@@ -87,10 +94,13 @@ export default function SolarPage() {
 
           {/* Зураглал */}
           <div className="w-full rounded-xl overflow-hidden bg-slate-50 mb-6 p-4 flex items-center justify-center">
-            <img
+            <Image
               src="/projects/5kw.png"
               alt="5кВт загварын зураглал"
-              className="w-full max-h-48 object-contain"
+              width={810}
+              height={300}
+              sizes="(min-width: 768px) 700px, 100vw"
+              className="w-full h-auto max-h-48 object-contain"
             />
           </div>
 
@@ -319,10 +329,13 @@ export default function SolarPage() {
           </p>
 
           <div className="w-full rounded-xl overflow-hidden bg-slate-50 mb-6 p-4 flex items-center justify-center">
-            <img
+            <Image
               src="/projects/5kw.png"
               alt="10кВт загварын зураглал"
-              className="w-full max-h-48 object-contain"
+              width={810}
+              height={300}
+              sizes="(min-width: 768px) 700px, 100vw"
+              className="w-full h-auto max-h-48 object-contain"
             />
           </div>
 
@@ -675,10 +688,13 @@ export default function SolarPage() {
               ✓ Өөрийн хэрэглээний хувь 96%-иас дээш
             </div>
             <div className="w-full rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center">
-              <img
+              <Image
                 src="/projects/connection.png"
                 alt="Холболтын схем"
-                className="w-full max-h-72 object-contain"
+                width={700}
+                height={300}
+                sizes="(min-width: 768px) 700px, 100vw"
+                className="w-full h-auto max-h-72 object-contain"
               />
             </div>
             
@@ -703,10 +719,13 @@ export default function SolarPage() {
             БҮТЭЭГДЭХҮҮНИЙ ХЭРЭГЛЭЭНИЙ САЛБАРУУД
           </h2>
           <div className="w-full rounded-xl overflow-hidden bg-slate-100 mb-6 flex items-center justify-center">
-            <img
+            <Image
               src="/projects/usage solar.png"
               alt="Хэрэглээний салбарууд"
-              className="w-full max-h-72 object-contain"
+              width={700}
+              height={346}
+              sizes="(min-width: 768px) 700px, 100vw"
+              className="w-full h-auto max-h-72 object-contain"
             />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

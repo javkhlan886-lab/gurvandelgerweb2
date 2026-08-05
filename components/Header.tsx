@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/about", label: "Бидний тухай" },
@@ -16,9 +17,11 @@ export default function Header() {
           href="/"
           className="group flex items-center select-none cursor-pointer"
         >
-          <img
+          <Image
             src="/logo.jpg"
             alt="Гурван Дэлгэр ХХК"
+            width={1536}
+            height={403}
             className="h-9 md:h-11 w-auto object-contain mix-blend-multiply transition-transform group-hover:scale-105 duration-300"
           />
         </Link>

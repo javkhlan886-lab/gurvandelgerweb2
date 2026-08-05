@@ -1,6 +1,7 @@
 "use client"; // ← энэ мөрийг нэмэх
 
 import React from "react";
+import Image from "next/image";
 import Header from "./Header";
 
 export default function Partner() {
@@ -79,11 +80,13 @@ export default function Partner() {
               key={i}
               className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 bg-white"
             >
-              <div className="h-48 bg-slate-50 flex items-center justify-center p-6">
-                <img
+              <div className="relative h-48 bg-slate-50 p-6">
+                <Image
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-24 max-w-[180px] object-contain"
+                  fill
+                  sizes="180px"
+                  className="object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}

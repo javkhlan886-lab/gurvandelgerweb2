@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Footer from "@/components/footer";
 import Header from "@/components/Header";
 
@@ -142,11 +143,13 @@ export default function BuildingPage() {
               ажиллахыг эрхэмлэн ажилладаг.
             </p>
           </div>
-          <div className="flex-shrink-0 w-full md:w-80 h-52 rounded-xl overflow-hidden shadow-lg bg-slate-100">
-            <img
+          <div className="relative flex-shrink-0 w-full md:w-80 h-52 rounded-xl overflow-hidden shadow-lg bg-slate-100">
+            <Image
               src="/projects/team.png"
               alt="Хамт олон"
-              className="w-full h-full object-cover"
+              fill
+              sizes="(min-width: 768px) 320px, 100vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -204,12 +207,14 @@ export default function BuildingPage() {
                       {project.images.map((img, i) => (
                         <div
                           key={i}
-                          className="h-32 rounded-lg overflow-hidden bg-slate-100"
+                          className="relative h-32 rounded-lg overflow-hidden bg-slate-100"
                         >
-                          <img
+                          <Image
                             src={img}
                             alt={`${project.title} ${i + 1}`}
-                            className="w-full h-full object-cover"
+                            fill
+                            sizes="(min-width: 768px) 200px, 45vw"
+                            className="object-cover"
                           />
                         </div>
                       ))}
@@ -232,10 +237,12 @@ export default function BuildingPage() {
                 key={i}
                 className="group relative rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-slate-100 h-48 md:h-60"
               >
-                <img
+                <Image
                   src={img.src}
                   alt={img.caption}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-xs">{img.caption}</p>

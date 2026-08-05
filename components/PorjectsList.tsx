@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { X } from "lucide-react";
+import Image from "next/image";
 import Header from "./Header";
 
 export default function Projects() {
@@ -93,11 +94,13 @@ export default function Projects() {
               className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-200 transition-all cursor-pointer hover:-translate-y-1 bg-white"
             >
               {/* Логоны хэсэг */}
-              <div className="h-48 bg-slate-50 flex items-center justify-center p-6">
-                <img
+              <div className="relative h-48 bg-slate-50 p-6">
+                <Image
                   src={project.logo}
                   alt={project.name}
-                  className="max-h-24 max-w-[180px] object-contain"
+                  fill
+                  sizes="180px"
+                  className="object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
@@ -138,11 +141,13 @@ export default function Projects() {
             </button>
 
             {/* Лого */}
-            <div className="flex justify-center mb-4">
-              <img
+            <div className="relative h-20 mb-4">
+              <Image
                 src={projects[selected].logo}
                 alt={projects[selected].name}
-                className="max-h-20 max-w-[160px] object-contain"
+                fill
+                sizes="160px"
+                className="object-contain"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}

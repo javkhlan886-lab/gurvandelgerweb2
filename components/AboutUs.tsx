@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Header from "./Header";
 
 const LEADERS = [
@@ -92,11 +93,13 @@ export default function AboutUs() {
           >
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
               <div className="flex-shrink-0 flex flex-col items-center gap-3 w-full md:w-auto">
-                <div className="w-48 h-64 md:w-64 md:h-80 rounded-xl overflow-hidden shadow-lg bg-slate-100 ring-1 ring-slate-200">
-                  <img
+                <div className="relative w-48 h-64 md:w-64 md:h-80 rounded-xl overflow-hidden shadow-lg bg-slate-100 ring-1 ring-slate-200">
+                  <Image
                     src={leader.photo}
                     alt={leader.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(min-width: 768px) 256px, 192px"
+                    className="object-cover"
                   />
                 </div>
                 <p className="text-sm text-slate-500 text-center max-w-[200px]">
