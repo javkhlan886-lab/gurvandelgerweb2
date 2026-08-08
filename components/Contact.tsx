@@ -21,8 +21,8 @@ export default function ContactUs() {
     setLoading(true);
     try {
       await emailjs.send(
-        "service_08m4j6f",
-        "template_7ckmjfz",
+        "service_e8iiykj",
+        "template_3me0lo8",
         {
           name: form.name,
           company: form.company,
@@ -30,7 +30,7 @@ export default function ContactUs() {
           phone: form.phone,
           message: form.message,
         },
-        "JRjWny9rpe_4oYbVE"
+        "9EGkqmlvd6nWVKnf5"
       );
       setSent(true);
     } catch {
