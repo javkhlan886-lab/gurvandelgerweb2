@@ -1,12 +1,22 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/about", label: "Бидний тухай" },
   { href: "/partner", label: "Партнер байгууллагууд" },
   { href: "/projects", label: "Хийсэн төсөлүүд" },
   { href: "/social", label: "Нийгмийн хариуцлага" },
+];
+
+const PRODUCTS = [
+  {
+    name: "PnL Platform",
+    description:
+      "Компанийн орлого, зарлагыг нэг дороос удирдах, эрхийн түвшин тохируулах санхүүгийн систем.",
+    href: "https://product.gurvandelger.com/product",
+  },
 ];
 
 export default function Header() {
@@ -36,14 +46,48 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://product.gurvandelger.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative transition-colors hover:text-indigo-600 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-indigo-500 after:transition-all hover:after:w-full"
-          >
-            Бүтээгдхүүн
-          </a>
+          <div className="relative group">
+            <a
+              href="https://product.gurvandelger.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-1 transition-colors hover:text-indigo-600 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-indigo-500 after:transition-all hover:after:w-full"
+            >
+              Бүтээгдхүүн
+              <ChevronDown className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
+            </a>
+
+            <div className="absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
+              <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-900/10">
+                {PRODUCTS.map((product) => (
+                  <a
+                    key={product.href}
+                    href={product.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col gap-1 rounded-xl p-3 text-left transition-colors hover:bg-indigo-50"
+                  >
+                    <span className="text-sm font-semibold text-slate-900">
+                      {product.name}
+                    </span>
+                    <span className="text-xs leading-relaxed text-slate-500">
+                      {product.description}
+                    </span>
+                  </a>
+                ))}
+                <div className="my-1 border-t border-slate-100" />
+                <a
+                  href="https://product.gurvandelger.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between rounded-xl p-3 text-sm font-semibold text-indigo-600 transition-colors hover:bg-indigo-50"
+                >
+                  Бүх бүтээгдэхүүн үзэх
+                  <ArrowRight className="size-3.5" />
+                </a>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
