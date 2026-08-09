@@ -2,7 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
-import { LANGUAGES, useLanguage } from "@/lib/i18n";
+import { LANGUAGES, useLanguage, type Lang } from "@/lib/i18n";
+
+// Korean flag rendered 20% larger than the others (h-4/w-6 -> h-[19.2px]/w-[28.8px]).
+function flagSizeClass(code: Lang) {
+  return code === "ko" ? "h-[19.2px] w-[28.8px]" : "h-4 w-6";
+}
 
 export default function LanguageSwitcher() {
   const { lang, setLang } = useLanguage();
@@ -15,8 +20,8 @@ export default function LanguageSwitcher() {
         aria-label="Change language"
         className="flex items-center gap-1.5 rounded-full border border-slate-200 px-2.5 py-1.5 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
       >
-        <span className="relative block h-4 w-6 overflow-hidden rounded-sm ring-1 ring-slate-200">
-          <Image src={current.flag} alt={current.label} fill sizes="24px" className="object-cover" />
+        <span className={`relative block overflow-hidden rounded-sm ring-1 ring-slate-200 ${flagSizeClass(current.code)}`}>
+          <Image src={current.flag} alt={current.label} fill sizes="29px" className="object-cover" />
         </span>
       </button>
 
@@ -31,8 +36,8 @@ export default function LanguageSwitcher() {
                 l.code === lang ? "font-semibold text-indigo-600" : "text-slate-700"
               }`}
             >
-              <span className="relative block h-4 w-6 overflow-hidden rounded-sm ring-1 ring-slate-200 flex-shrink-0">
-                <Image src={l.flag} alt={l.label} fill sizes="24px" className="object-cover" />
+              <span className={`relative block flex-shrink-0 overflow-hidden rounded-sm ring-1 ring-slate-200 ${flagSizeClass(l.code)}`}>
+                <Image src={l.flag} alt={l.label} fill sizes="29px" className="object-cover" />
               </span>
               {l.label}
             </button>
