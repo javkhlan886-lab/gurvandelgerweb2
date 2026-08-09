@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { LANGUAGES, useLanguage } from "@/lib/i18n";
 
 export default function LanguageSwitcher() {
@@ -12,9 +13,11 @@ export default function LanguageSwitcher() {
       <button
         type="button"
         aria-label="Change language"
-        className="flex items-center gap-1.5 rounded-full border border-slate-200 px-2.5 py-1.5 text-sm transition-colors hover:border-indigo-300 hover:bg-indigo-50"
+        className="flex items-center gap-1.5 rounded-full border border-slate-200 px-2.5 py-1.5 transition-colors hover:border-indigo-300 hover:bg-indigo-50"
       >
-        <span className="text-base leading-none">{current.flag}</span>
+        <span className="relative block h-4 w-6 overflow-hidden rounded-sm ring-1 ring-slate-200">
+          <Image src={current.flag} alt={current.label} fill sizes="24px" className="object-cover" />
+        </span>
       </button>
 
       <div className="absolute right-0 top-full z-50 w-40 pt-2 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
@@ -24,11 +27,13 @@ export default function LanguageSwitcher() {
               key={l.code}
               type="button"
               onClick={() => setLang(l.code)}
-              className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-sm transition-colors hover:bg-indigo-50 ${
+              className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-sm transition-colors hover:bg-indigo-50 ${
                 l.code === lang ? "font-semibold text-indigo-600" : "text-slate-700"
               }`}
             >
-              <span className="text-base leading-none">{l.flag}</span>
+              <span className="relative block h-4 w-6 overflow-hidden rounded-sm ring-1 ring-slate-200 flex-shrink-0">
+                <Image src={l.flag} alt={l.label} fill sizes="24px" className="object-cover" />
+              </span>
               {l.label}
             </button>
           ))}

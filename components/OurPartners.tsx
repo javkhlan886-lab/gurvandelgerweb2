@@ -9,52 +9,27 @@ export default function Partner() {
   const { t } = useLanguage();
   // ... үлдсэн код өөрчлөлтгүй
   const allPartners = [
-    {
-      name: "Khan Altai Resource",
-      logo: "/partners/khanaltai.png",
-      desc: "Албан ёсны түнш",
-    },
-    { name: "ZTE", logo: "/partners/zte.png", desc: "Албан ёсны түнш" },
-    { name: "Mobinet", logo: "/partners/mobinet.png", desc: "Албан ёсны түнш" },
-    {
-      name: "Oyu Tolgoi",
-      logo: "/partners/oyutolgoi.png",
-      desc: "Албан ёсны түнш",
-    },
-    { name: "GMobile", logo: "/partners/gmobile.png", desc: "Албан ёсны түнш" },
+    { name: "Khan Altai Resource", logo: "/partners/khanaltai.png" },
+    { name: "ZTE", logo: "/partners/zte.png" },
+    { name: "Mobinet", logo: "/partners/mobinet.png" },
+    { name: "Oyu Tolgoi", logo: "/partners/oyutolgoi.png" },
+    { name: "GMobile", logo: "/partners/gmobile.png" },
     {
       name: "Sky Networks",
       logo: "/partners/skynetworks.jpg",
-      desc: "Mongolian First Broadband Network Company",
+      descKey: "partner.skynetworks" as const,
     },
-    { name: "МТҮЗ", logo: "/partners/ubtz.jpg", desc: "Албан ёсны түнш" },
-    { name: "ТХГ", logo: "/partners/thg.jpg", desc: "Албан ёсны түнш" },
-    { name: "NetCom", logo: "/partners/netcom.png", desc: "Албан ёсны түнш" },
-    {
-      name: "Altgana Resources",
-      logo: "/partners/altgana.jpg",
-      desc: "Албан ёсны түнш",
-    },
+    { name: "МТҮЗ", logo: "/partners/ubtz.jpg" },
+    { name: "ТХГ", logo: "/partners/thg.jpg" },
+    { name: "NetCom", logo: "/partners/netcom.png" },
+    { name: "Altgana Resources", logo: "/partners/altgana.jpg" },
     {
       name: "Барилгын хөгжлийн төв",
       logo: "/partners/barilgiinhugjul.jpg",
-      desc: "Албан ёсны түнш",
     },
-    {
-      name: "Дундговь хулд",
-      logo: "/partners/dundgovi.png",
-      desc: "Албан ёсны түнш",
-    },
-    {
-      name: "Дундговь Өндөршил",
-      logo: "/partners/undurshil.png",
-      desc: "Албан ёсны түнш",
-    },
-    {
-      name: "Дэлгэрхаан",
-      logo: "/partners/delgerhaan.png",
-      desc: "Албан ёсны түнш",
-    },
+    { name: "Дундговь хулд", logo: "/partners/dundgovi.png" },
+    { name: "Дундговь Өндөршил", logo: "/partners/undurshil.png" },
+    { name: "Дэлгэрхаан", logo: "/partners/delgerhaan.png" },
   ];
 
   return (
@@ -98,7 +73,9 @@ export default function Partner() {
                 <p className="font-semibold text-slate-900 text-sm mb-1">
                   {partner.name}
                 </p>
-                <p className="text-xs text-slate-500">{partner.desc}</p>
+                <p className="text-xs text-slate-500">
+                  {partner.descKey ? t(partner.descKey) : t("partner.official")}
+                </p>
               </div>
             </div>
           ))}

@@ -5,10 +5,10 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from "
 export type Lang = "mn" | "en" | "ko" | "zh";
 
 export const LANGUAGES: { code: Lang; label: string; flag: string }[] = [
-  { code: "mn", label: "Монгол", flag: "🇲🇳" },
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "ko", label: "한국어", flag: "🇰🇷" },
-  { code: "zh", label: "中文", flag: "🇨🇳" },
+  { code: "mn", label: "Монгол", flag: "/flags/mn.png" },
+  { code: "en", label: "English", flag: "/flags/en.png" },
+  { code: "ko", label: "한국어", flag: "/flags/ko.png" },
+  { code: "zh", label: "中文", flag: "/flags/zh.png" },
 ];
 
 const dict = {
@@ -75,6 +75,13 @@ const dict = {
 
   "partner.badge": { mn: "Түншлэл", en: "Partnership", ko: "파트너십", zh: "合作伙伴关系" },
   "partner.title": { mn: "Хамтрагч байгууллагууд", en: "Partner Organizations", ko: "파트너 기관", zh: "合作机构" },
+  "partner.official": { mn: "Албан ёсны түнш", en: "Official Partner", ko: "공식 파트너", zh: "官方合作伙伴" },
+  "partner.skynetworks": {
+    mn: "Монголын анхны өргөн зурвасын сүлжээний компани",
+    en: "Mongolia's First Broadband Network Company",
+    ko: "몽골 최초의 초고속 통신망 기업",
+    zh: "蒙古国首家宽带网络公司",
+  },
 
   "projects.badge": { mn: "Портфолио", en: "Portfolio", ko: "포트폴리오", zh: "项目组合" },
   "projects.title": { mn: "Хийсэн төсөлүүд", en: "Completed Projects", ko: "완료된 프로젝트", zh: "已完成项目" },
@@ -82,10 +89,36 @@ const dict = {
 
   "social.badge": { mn: "Нийгмийн хариуцлага", en: "Social Responsibility", ko: "사회적 책임", zh: "社会责任" },
   "social.title": { mn: "Байгууллагын нийгмийн хариуцлага", en: "Corporate Social Responsibility", ko: "기업의 사회적 책임", zh: "企业社会责任" },
+  "social.subtitle": {
+    mn: "Гурван Дэлгэр ХХК-ийн байгууллага байгуулагдсан үеэс эхлэн бизнесийн амжилтыг нийгэмдээ бүтээж буй үнэ цэнээр хэмжиж ирлээ.",
+    en: "Since its founding, Gurvandelger LLC has measured business success by the value it creates for society.",
+    ko: "Gurvandelger LLC는 설립 이래 사업의 성공을 사회에 창출하는 가치로 가늠해 왔습니다.",
+    zh: "自成立以来，Gurvandelger LLC 始终以为社会创造的价值来衡量企业的成功。",
+  },
 
   "building.badge": { mn: "Барилга Байгууламж", en: "Construction", ko: "건설", zh: "建筑工程" },
+  "building.introTitle": { mn: "ТОВЧ ТАНИЛЦУУЛГА", en: "BRIEF INTRODUCTION", ko: "회사 소개", zh: "简介" },
+  "building.teamAlt": { mn: "Хамт олон", en: "Our Team", ko: "임직원", zh: "团队" },
+  "building.projectsTitle": { mn: "БИДНИЙ ГҮЙЦЭТГЭСЭН АЖЛУУДААС", en: "OUR COMPLETED PROJECTS", ko: "당사가 수행한 프로젝트", zh: "我们完成的项目" },
+  "building.galleryTitle": { mn: "БАРИЛГЫН АЖЛЫН ЗУРГУУД", en: "CONSTRUCTION PROJECT PHOTOS", ko: "건설 현장 사진", zh: "施工现场照片" },
   "solar.badge": { mn: "Сэргээгдэх эрчим хүч", en: "Renewable Energy", ko: "신재생 에너지", zh: "可再生能源" },
   "telecom.badge": { mn: "Мэдээлэл Технологи", en: "Information Technology", ko: "정보 기술", zh: "信息技术" },
+  "telecom.introTitle": { mn: "ТОВЧ ТАНИЛЦУУЛГА", en: "BRIEF INTRODUCTION", ko: "회사 소개", zh: "简介" },
+  "telecom.trendsIntro": {
+    mn: "Ирээдүйн чиг хандлагад тулгуурлан бид дараах салбарт үйл ажиллагаагаа өргөжүүлж байна:",
+    en: "Building on future trends, we are expanding our operations into the following areas:",
+    ko: "미래 트렌드를 기반으로 저희는 다음 분야로 사업을 확장하고 있습니다:",
+    zh: "着眼未来发展趋势，我们正将业务拓展至以下领域：",
+  },
+  "telecom.softwareTitle": { mn: "Програм хангамжийн бүтээгдэхүүн", en: "Software Products", ko: "소프트웨어 제품", zh: "软件产品" },
+  "telecom.softwareSubtitle": {
+    mn: "Дэд бүтцийн угсралтаас гадна бид байгууллагуудад зориулсан програм хангамжийн бүтээгдэхүүн, дижитал шийдлүүдийг хөгжүүлж, нийлүүлдэг.",
+    en: "Beyond infrastructure installation, we also develop and supply software products and digital solutions for organizations.",
+    ko: "인프라 설치 외에도 저희는 기업을 위한 소프트웨어 제품과 디지털 솔루션을 개발 및 공급하고 있습니다.",
+    zh: "除基础设施安装外，我们还为各类企业开发并提供软件产品与数字化解决方案。",
+  },
+  "telecom.productPageLink": { mn: "Бүтээгдэхүүний хуудас", en: "Product Page", ko: "제품 페이지", zh: "产品页面" },
+  "telecom.infraTitle": { mn: "Харилцаа холбооны дэд бүтэц", en: "Telecommunications Infrastructure", ko: "통신 인프라", zh: "通信基础设施" },
 
   "contact.badge": { mn: "Холбоо барих", en: "Contact", ko: "문의", zh: "联系方式" },
   "contact.title": { mn: "Бидэнтэй холбогдоорой", en: "Get in Touch", ko: "문의하기", zh: "联系我们" },
