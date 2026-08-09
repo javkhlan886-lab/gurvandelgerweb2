@@ -3,8 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import Header from "./Header";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Partner() {
+  const { t } = useLanguage();
   // ... үлдсэн код өөрчлөлтгүй
   const allPartners = [
     {
@@ -68,10 +70,10 @@ export default function Partner() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
-            Түншлэл
+            {t("partner.badge")}
           </span>
           <h2 className="mt-5 text-2xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Хамтрагч байгууллагууд
+            {t("partner.title")}
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

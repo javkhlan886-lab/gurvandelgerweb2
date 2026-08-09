@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Phone } from "lucide-react";
 import Header from "./Header";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ContactUs() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({
     name: "",
     company: "",
@@ -34,7 +36,7 @@ export default function ContactUs() {
       );
       setSent(true);
     } catch {
-      alert("Илгээхэд алдаа гарлаа. Дахин оролдоно уу.");
+      alert(t("contact.errorAlert"));
     } finally {
       setLoading(false);
     }
@@ -52,13 +54,13 @@ export default function ContactUs() {
       <div className="max-w-3xl mx-auto px-4 py-16 md:py-20 flex flex-col items-center gap-10">
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
-            Холбоо барих
+            {t("contact.badge")}
           </span>
           <h1 className="mt-5 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Бидэнтэй холбогдоорой
+            {t("contact.title")}
           </h1>
           <p className="mt-3 text-slate-600">
-            Асуулт, хүсэлт, үнийн санал авахыг хүсвэл доорх маягтыг бөглөөрэй.
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -67,10 +69,10 @@ export default function ContactUs() {
             <div className="text-center py-10">
               <p className="text-4xl mb-4">✅</p>
               <h3 className="text-slate-900 text-xl font-bold mb-2">
-                Амжилттай илгээлээ!
+                {t("contact.successTitle")}
               </h3>
               <p className="text-slate-500 text-sm">
-                Бид тантай удахгүй холбогдох болно.
+                {t("contact.successDesc")}
               </p>
               <button
                 onClick={() => {
@@ -85,18 +87,18 @@ export default function ContactUs() {
                 }}
                 className="mt-6 text-indigo-600 underline text-sm hover:text-indigo-500"
               >
-                Дахин илгээх
+                {t("contact.sendAgain")}
               </button>
             </div>
           ) : (
             <>
               <h2 className="text-slate-900 text-2xl font-bold mb-6">
-                Холбогдох мэдээлэл
+                {t("contact.formTitle")}
               </h2>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input
                   type="text"
-                  placeholder="Таны нэр"
+                  placeholder={t("contact.namePh")}
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
@@ -104,7 +106,7 @@ export default function ContactUs() {
                 />
                 <input
                   type="text"
-                  placeholder="Байгууллага"
+                  placeholder={t("contact.companyPh")}
                   value={form.company}
                   onChange={(e) =>
                     setForm({ ...form, company: e.target.value })
@@ -113,7 +115,7 @@ export default function ContactUs() {
                 />
                 <input
                   type="email"
-                  placeholder="Имэйл хаяг"
+                  placeholder={t("contact.emailPh")}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
@@ -121,13 +123,13 @@ export default function ContactUs() {
                 />
                 <input
                   type="tel"
-                  placeholder="Утасны дугаар"
+                  placeholder={t("contact.phonePh")}
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400"
                 />
                 <textarea
-                  placeholder="Үнийн санал авах бүтээгдэхүүн, шийдэл ба нэмэлт шаардлага"
+                  placeholder={t("contact.messagePh")}
                   value={form.message}
                   onChange={(e) =>
                     setForm({ ...form, message: e.target.value })
@@ -140,7 +142,7 @@ export default function ContactUs() {
                   disabled={loading}
                   className="w-full bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-bold py-4 rounded-xl text-sm hover:shadow-lg hover:shadow-indigo-500/30 transition-all mt-2 disabled:opacity-60"
                 >
-                  {loading ? "Илгээж байна..." : "Хүсэлт илгээх"}
+                  {loading ? t("contact.submitting") : t("contact.submit")}
                 </button>
               </form>
             </>

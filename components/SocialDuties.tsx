@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Header from "./Header";
+import { useLanguage } from "@/lib/i18n";
 
 const SECTIONS = [
   {
@@ -47,6 +50,8 @@ const SECTIONS = [
 ];
 
 export default function SocialDuties() {
+  const { t } = useLanguage();
+
   return (
     <div className="relative w-full min-h-screen bg-white text-slate-900 font-sans antialiased">
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -59,10 +64,10 @@ export default function SocialDuties() {
       <div className="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-20">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
-            Нийгмийн хариуцлага
+            {t("social.badge")}
           </span>
           <h1 className="mt-5 text-2xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Байгууллагын нийгмийн хариуцлага
+            {t("social.title")}
           </h1>
           <p className="mt-4 text-slate-600 leading-relaxed">
             Гурван Дэлгэр ХХК-ийн байгууллага байгуулагдсан үеэс эхлэн

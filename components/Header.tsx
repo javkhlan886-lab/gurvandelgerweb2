@@ -1,25 +1,30 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ArrowRight } from "lucide-react";
-
-const NAV_LINKS = [
-  { href: "/about", label: "Бидний тухай" },
-  { href: "/partner", label: "Партнер байгууллагууд" },
-  { href: "/projects", label: "Хийсэн төсөлүүд" },
-  { href: "/social", label: "Нийгмийн хариуцлага" },
-];
+import { useLanguage } from "@/lib/i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const PRODUCTS = [
   {
     name: "PnL Platform",
-    description:
-      "Компанийн орлого, зарлагыг нэг дороос удирдах, эрхийн түвшин тохируулах санхүүгийн систем.",
-    href: "https://product.gurvandelger.com/product",
+    descKey: "product.pnl.desc" as const,
+    href: "https://product.gurvandelger.com/",
   },
 ];
 
 export default function Header() {
+  const { t } = useLanguage();
+
+  const NAV_LINKS = [
+    { href: "/about", label: t("nav.about") },
+    { href: "/partner", label: t("nav.partner") },
+    { href: "/projects", label: t("nav.projects") },
+    { href: "/social", label: t("nav.social") },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 py-3.5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -53,7 +58,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="relative inline-flex items-center gap-1 transition-colors hover:text-indigo-600 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-indigo-500 after:transition-all hover:after:w-full"
             >
-              Бүтээгдхүүн
+              {t("nav.products")}
               <ChevronDown className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
             </a>
 
@@ -71,7 +76,7 @@ export default function Header() {
                       {product.name}
                     </span>
                     <span className="text-xs leading-relaxed text-slate-500">
-                      {product.description}
+                      {t(product.descKey)}
                     </span>
                   </a>
                 ))}
@@ -82,12 +87,14 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-between rounded-xl p-3 text-sm font-semibold text-indigo-600 transition-colors hover:bg-indigo-50"
                 >
-                  Бүх бүтээгдэхүүн үзэх
+                  {t("nav.viewAllProducts")}
                   <ArrowRight className="size-3.5" />
                 </a>
               </div>
             </div>
           </div>
+
+          <LanguageSwitcher />
         </nav>
       </div>
     </header>

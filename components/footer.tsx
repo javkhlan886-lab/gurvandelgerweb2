@@ -1,7 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="w-full bg-slate-50 border-t border-slate-200 text-slate-700">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14">
@@ -9,22 +14,13 @@ export default function Footer() {
           href="/contact"
           className="group inline-flex items-center gap-2 text-xl md:text-2xl font-black tracking-tight text-slate-900 mb-6 hover:text-indigo-600 transition-colors"
         >
-          ХОЛБОО БАРИХ
+          {t("footer.contact")}
           <span className="text-indigo-500 transition-transform group-hover:translate-x-1">
             →
           </span>
         </Link>
 
         <div className="flex flex-col gap-3">
-          <div className="flex items-start gap-2">
-            <span className="text-base mt-0.5">📍</span>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              Улаанбаатар хот, Чингэлтэй дүүрэг, 5-р хороо,
-              <br />
-              Амарсанаагийн гудамж Шуурхай зар.7-р давхарт 701 тоот
-            </p>
-          </div>
-
           <div className="flex items-center gap-2">
             <span className="text-indigo-600 text-sm">✉</span>
             <a
@@ -92,7 +88,7 @@ export default function Footer() {
       <div className="border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex justify-center">
           <p className="text-xs text-slate-400">
-            Вэбсайтыг Гурвандэлгэр ХХК хөгжүүлэв
+            {t("footer.developedBy")}
           </p>
         </div>
       </div>

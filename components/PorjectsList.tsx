@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import { X } from "lucide-react";
 import Image from "next/image";
 import Header from "./Header";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Projects() {
+  const { t } = useLanguage();
   const [selected, setSelected] = useState<number | null>(null);
 
   const projects = [
@@ -79,10 +81,10 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 shadow-sm">
-            Портфолио
+            {t("projects.badge")}
           </span>
           <h2 className="mt-5 text-2xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Хийсэн төсөлүүд
+            {t("projects.title")}
           </h2>
         </div>
 
@@ -114,7 +116,7 @@ export default function Projects() {
                 </p>
                 <p className="text-xs text-slate-500">{project.desc}</p>
                 <p className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600">
-                  Дэлгэрэнгүй үзэх
+                  {t("projects.viewMore")}
                 </p>
               </div>
             </div>
