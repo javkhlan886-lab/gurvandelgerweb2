@@ -16,6 +16,7 @@ const dict = {
   "nav.partner": { mn: "Партнер байгууллагууд", en: "Partners", ko: "파트너사", zh: "合作伙伴" },
   "nav.projects": { mn: "Хийсэн төсөлүүд", en: "Projects", ko: "프로젝트", zh: "项目案例" },
   "nav.social": { mn: "Нийгмийн хариуцлага", en: "Social Responsibility", ko: "사회적 책임", zh: "社会责任" },
+  "nav.awards": { mn: "Шагнал, Гавьяа", en: "Awards", ko: "수상 실적", zh: "荣誉奖项" },
   "nav.products": { mn: "Бүтээгдхүүн", en: "Products", ko: "제품", zh: "产品" },
   "nav.viewAllProducts": { mn: "Бүх бүтээгдэхүүн үзэх", en: "View all products", ko: "모든 제품 보기", zh: "查看全部产品" },
   "product.pnl.desc": {

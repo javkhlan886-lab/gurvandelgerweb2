@@ -23,6 +23,7 @@ export default function Header() {
     { href: "/partner", label: t("nav.partner") },
     { href: "/projects", label: t("nav.projects") },
     { href: "/social", label: t("nav.social") },
+    { href: "/awards", label: t("nav.awards") },
   ];
 
   return (

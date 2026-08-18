@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "./Header";
+import { AwardsSection } from "./Awards";
 import { useLanguage } from "@/lib/i18n";
 
 const DIVISIONS = [
@@ -146,6 +147,11 @@ export default function HeroSection() {
             ))}
           </div>
         </section>
+
+        {/* 4. Awards & Recognition */}
+        <div className="w-full mt-24">
+          <AwardsSection compact />
+        </div>
       </main>
     </div>
   );
