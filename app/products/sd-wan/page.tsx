@@ -5,16 +5,20 @@ import Footer from "@/components/footer";
 import { SDWAN_FAQ } from "@/lib/sdwanFaq";
 import { SITE_NAME, SITE_URL, toJsonLd } from "@/lib/site";
 
-const TITLE = "SD-WAN шийдэл Монголд | Олон салбарын сүлжээ — Гурван Дэлгэр ХХК";
+const TITLE = "Монголд SD-WAN, SDWAN зарна — олон салбарын сүлжээ | Гурван Дэлгэр ХХК";
 const DESCRIPTION =
-  "SD-WAN технологиор MPLS, broadband, LTE/5G сүлжээг нэг overlay-д нэгтгэж, олон салбартай байгууллагын сүлжээг ISP-ээс үл хамааран цогцоор удирдана. Гурван Дэлгэр ХХК — тоног сонголтоос нэвтрүүлэлт, дэмжлэг хүртэл.";
+  "Гурван Дэлгэр ХХК Монголд SD-WAN (SDWAN) зарна, суурилуулна: MPLS, broadband, LTE/5G сүлжээг нэг overlay-д нэгтгэж, олон салбартай байгууллагын сүлжээг ISP-ээс үл хамааран удирдана. Тоног сонголтоос нэвтрүүлэлт, дэмжлэг хүртэл.";
 const PATH = "/products/sd-wan";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
   keywords: [
+    "Монголд SD-WAN зарна",
+    "Монголд SDWAN зарна",
     "SD-WAN",
+    "SDWAN",
+    "sdwan Монгол",
     "SD-WAN Монгол",
     "олон салбартай байгууллагын сүлжээ",
     "Гурван Дэлгэр ХХК",
@@ -43,7 +47,8 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${SITE_URL}${PATH}#service`,
-      name: "SD-WAN — олон салбартай байгууллагын нэгдсэн сүлжээний шийдэл",
+      name: "SD-WAN (SDWAN) — олон салбартай байгууллагын нэгдсэн сүлжээний шийдэл",
+      alternateName: ["SDWAN", "Software-Defined WAN"],
       serviceType: "SD-WAN",
       description: DESCRIPTION,
       url: `${SITE_URL}${PATH}`,

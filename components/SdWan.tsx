@@ -47,13 +47,13 @@ const all = (s: string): L10n => ({ mn: s, en: s, ko: s, zh: s });
 const COPY = {
   badge: { mn: "Бүтээгдэхүүн · SD-WAN", en: "Product · SD-WAN", ko: "제품 · SD-WAN", zh: "产品 · SD-WAN" },
   h1: {
-    mn: "SD-WAN — олон салбартай байгууллагын нэгдсэн сүлжээний шийдэл",
+    mn: "SD-WAN (SDWAN) — олон салбартай байгууллагын нэгдсэн сүлжээний шийдэл",
     en: "SD-WAN — a unified network solution for multi-branch organizations",
     ko: "SD-WAN — 다지점 조직을 위한 통합 네트워크 솔루션",
     zh: "SD-WAN — 多分支企业统一网络解决方案",
   },
   lead: {
-    mn: "MPLS, broadband, LTE/5G болон Wi-Fi холболтоо нэгтгэж, аль нэг ISP-ээс хамаарахгүй, найдвартай, аюулгүй нэг сүлжээтэй болоорой. Монголд SD-WAN шийдлийг Гурван Дэлгэр ХХК нийлүүлж, нэвтрүүлнэ.",
+    mn: "MPLS, broadband, LTE/5G болон Wi-Fi холболтоо нэгтгэж, аль нэг ISP-ээс хамаарахгүй, найдвартай, аюулгүй нэг сүлжээтэй болоорой. Гурван Дэлгэр ХХК Монголд SD-WAN зарна, суурилуулж, дэмжлэг үзүүлнэ.",
     en: "Combine your MPLS, broadband, LTE/5G and Wi-Fi links into one reliable, secure network that doesn't depend on any single ISP. Gurvandelger LLC supplies and deploys SD-WAN solutions in Mongolia.",
     ko: "MPLS, 브로드밴드, LTE/5G, Wi-Fi 회선을 통합하여 특정 ISP에 의존하지 않는 안정적이고 안전한 하나의 네트워크를 구축하세요. Gurvandelger LLC가 몽골에서 SD-WAN 솔루션을 공급하고 구축합니다.",
     zh: "整合 MPLS、宽带、LTE/5G 与 Wi-Fi 链路，打造不依赖任何单一 ISP 的可靠、安全的统一网络。Gurvandelger LLC 在蒙古国提供并部署 SD-WAN 解决方案。",
@@ -63,10 +63,10 @@ const COPY = {
 
   whatTitle: { mn: "SD-WAN гэж юу вэ?", en: "What is SD-WAN?", ko: "SD-WAN이란 무엇인가요?", zh: "什么是 SD-WAN？" },
   whatBody: {
-    mn: "SD-WAN нь MPLS, broadband, LTE/5G болон Wi-Fi сүлжээг нэг overlay сүлжээнд нэгтгэж, аппликейшн бүрт хамгийн тохиромжтой замыг автоматаар сонгоно. Ингэснээр олон салбартай байгууллагын сүлжээг аль нэг интернэт үйлчилгээ үзүүлэгч (ISP)-ийн сүлжээнээс үл хамааран нэг цогц сүлжээ болгоно.",
-    en: "SD-WAN unifies MPLS, broadband, LTE/5G and Wi-Fi networks into a single overlay network and automatically picks the best path for every application. This turns a multi-branch organization's network into one unified network that is independent of any single internet service provider (ISP).",
-    ko: "SD-WAN은 MPLS, 브로드밴드, LTE/5G 및 Wi-Fi 네트워크를 하나의 오버레이 네트워크로 통합하고 애플리케이션별로 최적의 경로를 자동으로 선택합니다. 이를 통해 여러 지점을 가진 조직의 네트워크를 특정 인터넷 서비스 제공업체(ISP)에 종속되지 않는 하나의 통합 네트워크로 만듭니다.",
-    zh: "SD-WAN 将 MPLS、宽带、LTE/5G 与 Wi-Fi 网络整合为统一的 overlay 网络，并为每个应用自动选择最佳路径，使多分支企业的网络成为不依赖任何单一互联网服务提供商（ISP）的统一网络。",
+    mn: "SD-WAN (SDWAN буюу Software-Defined WAN) нь MPLS, broadband, LTE/5G болон Wi-Fi сүлжээг нэг overlay сүлжээнд нэгтгэж, аппликейшн бүрт хамгийн тохиромжтой замыг автоматаар сонгоно. Ингэснээр олон салбартай байгууллагын сүлжээг аль нэг интернэт үйлчилгээ үзүүлэгч (ISP)-ийн сүлжээнээс үл хамааран нэг цогц сүлжээ болгоно.",
+    en: "SD-WAN (also written SDWAN, short for Software-Defined WAN) unifies MPLS, broadband, LTE/5G and Wi-Fi networks into a single overlay network and automatically picks the best path for every application. This turns a multi-branch organization's network into one unified network that is independent of any single internet service provider (ISP).",
+    ko: "SD-WAN(SDWAN, Software-Defined WAN)은 MPLS, 브로드밴드, LTE/5G 및 Wi-Fi 네트워크를 하나의 오버레이 네트워크로 통합하고 애플리케이션별로 최적의 경로를 자동으로 선택합니다. 이를 통해 여러 지점을 가진 조직의 네트워크를 특정 인터넷 서비스 제공업체(ISP)에 종속되지 않는 하나의 통합 네트워크로 만듭니다.",
+    zh: "SD-WAN（亦写作 SDWAN，即软件定义广域网）将 MPLS、宽带、LTE/5G 与 Wi-Fi 网络整合为统一的 overlay 网络，并为每个应用自动选择最佳路径，使多分支企业的网络成为不依赖任何单一互联网服务提供商（ISP）的统一网络。",
   },
   serviceTitle: {
     mn: "Гурван Дэлгэр ХХК-ийн үйлчилгээ",

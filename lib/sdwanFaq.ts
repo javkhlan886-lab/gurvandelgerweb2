@@ -7,6 +7,20 @@ type L10n = Record<Lang, string>;
 export const SDWAN_FAQ: { q: L10n; a: L10n }[] = [
   {
     q: {
+      mn: "Монголд SD-WAN хаанаас худалдаж авах вэ?",
+      en: "Where can I buy SD-WAN in Mongolia?",
+      ko: "몽골에서 SD-WAN은 어디서 구매할 수 있나요?",
+      zh: "在蒙古国哪里可以购买 SD-WAN？",
+    },
+    a: {
+      mn: "Гурван Дэлгэр ХХК Монголд SD-WAN (SDWAN) зарна. Бид олон үйлдвэрлэгчийн тоног төхөөрөмжөөс танай байгууллагад тохирохыг сонгож, нийлүүлэлт, суурилуулалт, дэмжлэгийг бүрэн хариуцна. Үнийн санал авах бол +976 77230606 дугаарт холбогдоорой.",
+      en: "Gurvandelger LLC sells SD-WAN in Mongolia. We choose the right equipment for your organization from multiple vendors and take full responsibility for supply, installation and support. For a quote, call +976 77230606.",
+      ko: "Gurvandelger LLC는 몽골에서 SD-WAN을 판매합니다. 여러 제조사의 장비 중 귀사에 맞는 제품을 선정하고 공급, 설치, 기술 지원까지 모두 책임집니다. 견적 문의는 +976 77230606으로 연락해 주세요.",
+      zh: "Gurvandelger LLC 在蒙古国销售 SD-WAN。我们从多家厂商的设备中为贵单位挑选合适方案，并全面负责供货、安装与技术支持。如需报价，请致电 +976 77230606。",
+    },
+  },
+  {
+    q: {
       mn: "SD-WAN нь MPLS-ээс юугаараа ялгаатай вэ?",
       en: "How is SD-WAN different from MPLS?",
       ko: "SD-WAN은 MPLS와 무엇이 다른가요?",

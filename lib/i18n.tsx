@@ -63,10 +63,10 @@ const dict = {
   },
   "home.division2.title": { mn: "Мэдээлэл Технологи", en: "Information Technology", ko: "정보 기술", zh: "信息技术" },
   "home.division2.desc": {
-    mn: "Веб систем, бизнесийн удирдлагын програм хангамж, IoT дэд бүтцийн шийдэл — бүтээгдэхүүнүүдийг product.gurvandelger.com дээрээс үзнэ үү.",
-    en: "Web systems, business management software, IoT infrastructure solutions — see our products at product.gurvandelger.com.",
-    ko: "웹 시스템, 비즈니스 관리 소프트웨어, IoT 인프라 솔루션 — 제품은 product.gurvandelger.com에서 확인하세요.",
-    zh: "网站系统、企业管理软件、物联网基础设施解决方案 — 请访问 product.gurvandelger.com 查看我们的产品。",
+    mn: "Веб систем, бизнесийн удирдлагын програм хангамж, IoT дэд бүтцийн шийдэл. Мөн Монголд SD-WAN (SDWAN) зарна, суурилуулна — бүтээгдэхүүнүүдийг product.gurvandelger.com дээрээс үзнэ үү.",
+    en: "Web systems, business management software, IoT infrastructure solutions. We also sell and install SD-WAN in Mongolia — see our products at product.gurvandelger.com.",
+    ko: "웹 시스템, 비즈니스 관리 소프트웨어, IoT 인프라 솔루션. 또한 몽골에서 SD-WAN을 판매·설치합니다 — 제품은 product.gurvandelger.com에서 확인하세요.",
+    zh: "网站系统、企业管理软件、物联网基础设施解决方案。我们还在蒙古国销售并安装 SD-WAN — 请访问 product.gurvandelger.com 查看我们的产品。",
   },
   "home.division3.title": { mn: "Сэргээгдэх эрчим хүч", en: "Renewable Energy", ko: "신재생 에너지", zh: "可再生能源" },
   "home.division3.desc": {
