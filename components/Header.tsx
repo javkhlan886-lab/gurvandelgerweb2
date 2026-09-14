@@ -12,6 +12,13 @@ const PRODUCTS = [
     name: "PnL Platform",
     descKey: "product.pnl.desc" as const,
     href: "https://product.gurvandelger.com/",
+    external: true,
+  },
+  {
+    name: "SD-WAN",
+    descKey: "product.sdwan.desc" as const,
+    href: "/products/sd-wan",
+    external: false,
   },
 ];
 
@@ -65,22 +72,35 @@ export default function Header() {
 
             <div className="absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
               <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-900/10">
-                {PRODUCTS.map((product) => (
-                  <a
-                    key={product.href}
-                    href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col gap-1 rounded-xl p-3 text-left transition-colors hover:bg-indigo-50"
-                  >
-                    <span className="text-sm font-semibold text-slate-900">
-                      {product.name}
-                    </span>
-                    <span className="text-xs leading-relaxed text-slate-500">
-                      {t(product.descKey)}
-                    </span>
-                  </a>
-                ))}
+                {PRODUCTS.map((product) => {
+                  const itemClass =
+                    "flex flex-col gap-1 rounded-xl p-3 text-left transition-colors hover:bg-indigo-50";
+                  const content = (
+                    <>
+                      <span className="text-sm font-semibold text-slate-900">
+                        {product.name}
+                      </span>
+                      <span className="text-xs leading-relaxed text-slate-500">
+                        {t(product.descKey)}
+                      </span>
+                    </>
+                  );
+                  return product.external ? (
+                    <a
+                      key={product.href}
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={itemClass}
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <Link key={product.href} href={product.href} className={itemClass}>
+                      {content}
+                    </Link>
+                  );
+                })}
                 <div className="my-1 border-t border-slate-100" />
                 <a
                   href="https://product.gurvandelger.com"

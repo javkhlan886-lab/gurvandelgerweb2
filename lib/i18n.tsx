@@ -25,6 +25,12 @@ const dict = {
     ko: "회사의 수익과 지출을 한곳에서 관리하고 권한을 설정하는 재무 시스템입니다.",
     zh: "一站式管理公司收入与支出并设置权限的财务系统。",
   },
+  "product.sdwan.desc": {
+    mn: "Байгууллагын төв, салбар, алслагдсан цэгүүдийг нэг найдвартай, аюулгүй сүлжээнд холбох шийдэл.",
+    en: "Connect your headquarters, branches and remote sites into one reliable, secure network.",
+    ko: "본사, 지점 및 원격 사이트를 하나의 안정적이고 안전한 네트워크로 연결하는 솔루션입니다.",
+    zh: "将总部、分支机构及远程站点连接为一个可靠、安全网络的解决方案。",
+  },
 
   "footer.contact": { mn: "ХОЛБОО БАРИХ", en: "CONTACT US", ko: "문의하기", zh: "联系我们" },
   "footer.developedBy": {

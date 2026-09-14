@@ -151,27 +151,11 @@ export default function ContactUs() {
 
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <a
-            href="tel:+976860310586"
+            href="tel:+97677230606"
             className="flex items-center gap-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-200 transition-colors text-slate-700 px-6 py-3 rounded-xl text-sm font-medium"
           >
             <Phone size={16} className="text-indigo-600" />
-            +976-86031058
-          </a>
-
-          <a
-            href="tel:+97680101872"
-            className="flex items-center gap-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-200 transition-colors text-slate-700 px-6 py-3 rounded-xl text-sm font-medium"
-          >
-            <Phone size={16} className="text-indigo-600" />
-            +976-80101872
-          </a>
-
-          <a
-            href="tel:+97677760606"
-            className="flex items-center gap-2 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-200 transition-colors text-slate-700 px-6 py-3 rounded-xl text-sm font-medium"
-          >
-            <Phone size={16} className="text-indigo-600" />
-            +976-77760606
+            +976-77230606
           </a>
         </div>
       </div>
