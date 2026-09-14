@@ -9,6 +9,8 @@ import {
   Boxes,
   Building2,
   Cable,
+  Check,
+  ChevronDown,
   Cloud,
   CloudCog,
   Coins,
@@ -18,7 +20,9 @@ import {
   Landmark,
   LayoutDashboard,
   Lock,
+  Mail,
   Network,
+  Phone,
   Pickaxe,
   Plug,
   Router,
@@ -33,6 +37,8 @@ import {
 } from "lucide-react";
 import Header from "./Header";
 import { useLanguage, type Lang } from "@/lib/i18n";
+import { SDWAN_FAQ } from "@/lib/sdwanFaq";
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_TEL } from "@/lib/site";
 
 type L10n = Record<Lang, string>;
 
@@ -40,20 +46,48 @@ const all = (s: string): L10n => ({ mn: s, en: s, ko: s, zh: s });
 
 const COPY = {
   badge: { mn: "Бүтээгдэхүүн · SD-WAN", en: "Product · SD-WAN", ko: "제품 · SD-WAN", zh: "产品 · SD-WAN" },
-  title: {
-    mn: "Байгууллагын бүх салбарыг нэг ухаалаг сүлжээнд",
-    en: "Every branch of your organization on one intelligent network",
-    ko: "조직의 모든 지점을 하나의 지능형 네트워크로",
-    zh: "将企业所有分支连入同一个智能网络",
+  h1: {
+    mn: "SD-WAN — олон салбартай байгууллагын нэгдсэн сүлжээний шийдэл",
+    en: "SD-WAN — a unified network solution for multi-branch organizations",
+    ko: "SD-WAN — 다지점 조직을 위한 통합 네트워크 솔루션",
+    zh: "SD-WAN — 多分支企业统一网络解决方案",
   },
-  subtitle: {
-    mn: "SD-WAN нь MPLS, broadband, LTE/5G болон Wi-Fi сүлжээг нэг overlay сүлжээнд нэгтгэж, аппликейшн бүрт хамгийн тохиромжтой замыг автоматаар сонгоно. Ингэснээр олон салбартай байгууллагын сүлжээг аль нэг интернэт үйлчилгээ үзүүлэгч (ISP)-ийн сүлжээнээс үл хамааран нэг цогц сүлжээ болгоно. Гурван Дэлгэр ХХК нь үйлдвэрлэгч, тоног төхөөрөмж сонгохоос эхлээд нэвтрүүлэлт, дэмжлэг хүртэл цогцоор нь хариуцна.",
-    en: "SD-WAN unifies MPLS, broadband, LTE/5G and Wi-Fi networks into a single overlay network and automatically picks the best path for every application. This turns a multi-branch organization's network into one unified network that is independent of any single internet service provider (ISP). Gurvandelger LLC handles the entire journey — from vendor and equipment selection to deployment and support.",
-    ko: "SD-WAN은 MPLS, 브로드밴드, LTE/5G 및 Wi-Fi 네트워크를 하나의 오버레이 네트워크로 통합하고 애플리케이션별로 최적의 경로를 자동으로 선택합니다. 이를 통해 여러 지점을 가진 조직의 네트워크를 특정 인터넷 서비스 제공업체(ISP)에 종속되지 않는 하나의 통합 네트워크로 만듭니다. Gurvandelger LLC는 제조사 및 장비 선정부터 구축, 기술 지원까지 전 과정을 책임집니다.",
-    zh: "SD-WAN 将 MPLS、宽带、LTE/5G 与 Wi-Fi 网络整合为统一的 overlay 网络，并为每个应用自动选择最佳路径，使多分支企业的网络成为不依赖任何单一互联网服务提供商（ISP）的统一网络。Gurvandelger LLC 提供从厂商与设备选型到部署实施、技术支持的全流程服务。",
+  lead: {
+    mn: "MPLS, broadband, LTE/5G болон Wi-Fi холболтоо нэгтгэж, аль нэг ISP-ээс хамаарахгүй, найдвартай, аюулгүй нэг сүлжээтэй болоорой. Монголд SD-WAN шийдлийг Гурван Дэлгэр ХХК нийлүүлж, нэвтрүүлнэ.",
+    en: "Combine your MPLS, broadband, LTE/5G and Wi-Fi links into one reliable, secure network that doesn't depend on any single ISP. Gurvandelger LLC supplies and deploys SD-WAN solutions in Mongolia.",
+    ko: "MPLS, 브로드밴드, LTE/5G, Wi-Fi 회선을 통합하여 특정 ISP에 의존하지 않는 안정적이고 안전한 하나의 네트워크를 구축하세요. Gurvandelger LLC가 몽골에서 SD-WAN 솔루션을 공급하고 구축합니다.",
+    zh: "整合 MPLS、宽带、LTE/5G 与 Wi-Fi 链路，打造不依赖任何单一 ISP 的可靠、安全的统一网络。Gurvandelger LLC 在蒙古国提供并部署 SD-WAN 解决方案。",
   },
   ctaQuote: { mn: "Үнийн санал авах", en: "Request a quote", ko: "견적 요청", zh: "获取报价" },
   ctaArch: { mn: "Архитектур үзэх", en: "See the architecture", ko: "아키텍처 보기", zh: "查看架构" },
+
+  whatTitle: { mn: "SD-WAN гэж юу вэ?", en: "What is SD-WAN?", ko: "SD-WAN이란 무엇인가요?", zh: "什么是 SD-WAN？" },
+  whatBody: {
+    mn: "SD-WAN нь MPLS, broadband, LTE/5G болон Wi-Fi сүлжээг нэг overlay сүлжээнд нэгтгэж, аппликейшн бүрт хамгийн тохиромжтой замыг автоматаар сонгоно. Ингэснээр олон салбартай байгууллагын сүлжээг аль нэг интернэт үйлчилгээ үзүүлэгч (ISP)-ийн сүлжээнээс үл хамааран нэг цогц сүлжээ болгоно.",
+    en: "SD-WAN unifies MPLS, broadband, LTE/5G and Wi-Fi networks into a single overlay network and automatically picks the best path for every application. This turns a multi-branch organization's network into one unified network that is independent of any single internet service provider (ISP).",
+    ko: "SD-WAN은 MPLS, 브로드밴드, LTE/5G 및 Wi-Fi 네트워크를 하나의 오버레이 네트워크로 통합하고 애플리케이션별로 최적의 경로를 자동으로 선택합니다. 이를 통해 여러 지점을 가진 조직의 네트워크를 특정 인터넷 서비스 제공업체(ISP)에 종속되지 않는 하나의 통합 네트워크로 만듭니다.",
+    zh: "SD-WAN 将 MPLS、宽带、LTE/5G 与 Wi-Fi 网络整合为统一的 overlay 网络，并为每个应用自动选择最佳路径，使多分支企业的网络成为不依赖任何单一互联网服务提供商（ISP）的统一网络。",
+  },
+  serviceTitle: {
+    mn: "Гурван Дэлгэр ХХК-ийн үйлчилгээ",
+    en: "Gurvandelger LLC services",
+    ko: "Gurvandelger LLC 서비스",
+    zh: "Gurvandelger LLC 的服务",
+  },
+  serviceBody: {
+    mn: "Гурван Дэлгэр ХХК нь үйлдвэрлэгч, тоног төхөөрөмж сонгохоос эхлээд нэвтрүүлэлт, дэмжлэг хүртэл цогцоор нь хариуцна. Бид 2014 оноос Харилцаа холбооны зохицуулах хорооны “Б” ангиллын тусгай зөвшөөрөлтэйгөөр харилцаа холбооны сүлжээ, дэд бүтцийн угсралт хийж ирсэн сүлжээний тоног төхөөрөмж нийлүүлэгч, гүйцэтгэгч юм.",
+    en: "Gurvandelger LLC handles the entire journey — from vendor and equipment selection to deployment and support. Since 2014 we have held a Category “B” license from the Communications Regulatory Commission, building telecommunications networks and infrastructure as a network equipment supplier and contractor.",
+    ko: "Gurvandelger LLC는 제조사 및 장비 선정부터 구축, 기술 지원까지 전 과정을 책임집니다. 당사는 2014년부터 통신규제위원회의 “B”등급 면허를 보유하고 통신망 및 인프라를 구축해 온 네트워크 장비 공급 및 시공 기업입니다.",
+    zh: "Gurvandelger LLC 提供从厂商与设备选型到部署实施、技术支持的全流程服务。自 2014 年起，我们持有通信监管委员会颁发的“B”级许可证，作为网络设备供应商与承包商从事通信网络及基础设施建设。",
+  },
+
+  whyEyebrow: { mn: "Давуу тал", en: "Benefits", ko: "장점", zh: "优势" },
+  whyTitle: {
+    mn: "Яагаад SD-WAN сонгох вэ?",
+    en: "Why choose SD-WAN?",
+    ko: "왜 SD-WAN을 선택해야 할까요?",
+    zh: "为什么选择 SD-WAN？",
+  },
 
   archEyebrow: { mn: "Архитектур", en: "Architecture", ko: "아키텍처", zh: "架构" },
   archTitle: {
@@ -131,6 +165,15 @@ const COPY = {
     zh: "价格仅供参考，视项目范围而定。",
   },
 
+  faqEyebrow: { mn: "Асуулт, хариулт", en: "FAQ", ko: "FAQ", zh: "常见问题" },
+  faqTitle: {
+    mn: "SD-WAN-ийн талаар түгээмэл асуултууд",
+    en: "Frequently asked questions about SD-WAN",
+    ko: "SD-WAN 자주 묻는 질문",
+    zh: "关于 SD-WAN 的常见问题",
+  },
+
+  contactTitle: { mn: "Холбоо барих", en: "Contact us", ko: "문의하기", zh: "联系我们" },
   conclusion: {
     mn: "SD-WAN бол зөвхөн холболт биш — байгууллагын ирээдүйн платформ.",
     en: "SD-WAN is more than connectivity — it's your organization's future platform.",
@@ -143,8 +186,132 @@ const COPY = {
     ko: "다음 단계: PoC(개념 검증) 범위를 정의하기 위한 미팅을 잡으세요.",
     zh: "下一步：预约会议，明确 PoC（概念验证）范围。",
   },
+  phoneLabel: { mn: "Утас", en: "Phone", ko: "전화", zh: "电话" },
+  emailLabel: { mn: "Имэйл", en: "Email", ko: "이메일", zh: "邮箱" },
   ctaMeeting: { mn: "Уулзалт товлох", en: "Book a meeting", ko: "미팅 예약", zh: "预约会议" },
 } satisfies Record<string, L10n>;
+
+const SERVICE_STEPS: L10n[] = [
+  {
+    mn: "Хэрэгцээний судалгаа, сүлжээний зураг төсөл",
+    en: "Needs assessment & network design",
+    ko: "요구사항 분석 및 네트워크 설계",
+    zh: "需求调研与网络设计",
+  },
+  {
+    mn: "Үйлдвэрлэгч, тоног төхөөрөмжийн сонголт",
+    en: "Vendor and equipment selection",
+    ko: "제조사 및 장비 선정",
+    zh: "厂商与设备选型",
+  },
+  {
+    mn: "Суурилуулалт, нэвтрүүлэлт (PoC-оос эхлэн)",
+    en: "Installation & rollout (starting with a PoC)",
+    ko: "설치 및 구축 (PoC부터 시작)",
+    zh: "安装与部署（从 PoC 开始）",
+  },
+  {
+    mn: "Хяналт, засвар үйлчилгээ, дэмжлэг",
+    en: "Monitoring, maintenance & support",
+    ko: "모니터링, 유지보수 및 기술 지원",
+    zh: "监控、维护与技术支持",
+  },
+];
+
+type Point = { icon: React.ElementType; title: L10n; desc: L10n };
+
+const BENEFITS: Point[] = [
+  {
+    icon: Network,
+    title: {
+      mn: "ISP-ээс үл хамаарах сүлжээ",
+      en: "ISP-independent network",
+      ko: "ISP에 종속되지 않는 네트워크",
+      zh: "不依赖单一 ISP 的网络",
+    },
+    desc: {
+      mn: "Олон интернэт үйлчилгээ үзүүлэгчийн холболтыг зэрэг ашиглана. Нэг шугам тасарвал урсгал бусад шугам руу автоматаар шилжинэ.",
+      en: "Use links from several internet providers at once. If one line fails, traffic automatically moves to the others.",
+      ko: "여러 인터넷 서비스 제공업체의 회선을 동시에 사용합니다. 한 회선이 끊기면 트래픽이 자동으로 다른 회선으로 전환됩니다.",
+      zh: "同时使用多家互联网服务提供商的链路，一条线路中断时流量自动切换至其他线路。",
+    },
+  },
+  {
+    icon: Coins,
+    title: {
+      mn: "WAN зардал 40–60% буурна",
+      en: "40–60% lower WAN costs",
+      ko: "WAN 비용 40–60% 절감",
+      zh: "WAN 成本降低 40–60%",
+    },
+    desc: {
+      mn: "Үнэтэй MPLS шугамын хамаарлыг бууруулж, broadband болон LTE/5G холболтыг үр ашигтай ашиглана.",
+      en: "Reduce dependence on expensive MPLS lines and make efficient use of broadband and LTE/5G.",
+      ko: "고가의 MPLS 회선 의존도를 낮추고 브로드밴드와 LTE/5G를 효율적으로 활용합니다.",
+      zh: "降低对昂贵 MPLS 专线的依赖，高效利用宽带与 LTE/5G 链路。",
+    },
+  },
+  {
+    icon: Gauge,
+    title: {
+      mn: "Аппликейшн бүрт оновчтой зам",
+      en: "The best path for every application",
+      ko: "애플리케이션별 최적 경로",
+      zh: "为每个应用选择最佳路径",
+    },
+    desc: {
+      mn: "Видео хурал, ERP, POS зэрэг чухал системийн урсгалыг хамгийн найдвартай шугамаар дамжуулна.",
+      en: "Critical traffic such as video meetings, ERP and POS is routed over the most reliable link.",
+      ko: "화상회의, ERP, POS 등 중요한 트래픽을 가장 안정적인 회선으로 전송합니다.",
+      zh: "视频会议、ERP、POS 等关键业务流量经由最可靠的线路传输。",
+    },
+  },
+  {
+    icon: LayoutDashboard,
+    title: {
+      mn: "Нэг цэгээс төвлөрсөн удирдлага",
+      en: "Centralized management",
+      ko: "중앙 집중식 관리",
+      zh: "集中统一管理",
+    },
+    desc: {
+      mn: "Бүх салбарын сүлжээ, бодлогыг нэг dashboard-аас удирдана. ZTP-ээр шинэ салбарыг инженер явуулахгүйгээр холбоно.",
+      en: "Manage every branch's network and policies from one dashboard. With ZTP, new branches come online without sending an engineer.",
+      ko: "모든 지점의 네트워크와 정책을 하나의 대시보드에서 관리합니다. ZTP로 엔지니어 파견 없이 새 지점을 연결합니다.",
+      zh: "通过统一仪表盘管理所有分支的网络与策略，借助 ZTP 无需派遣工程师即可开通新分支。",
+    },
+  },
+  {
+    icon: ShieldCheck,
+    title: {
+      mn: "Суурилагдсан аюулгүй байдал",
+      en: "Built-in security",
+      ko: "내장된 보안",
+      zh: "内置安全防护",
+    },
+    desc: {
+      mn: "IPsec шифрлэлт, NGFW, IPS зэрэг хамгаалалтаар салбар хоорондын болон cloud руу гарах урсгалыг хамгаална.",
+      en: "IPsec encryption, NGFW and IPS protect traffic between branches and to the cloud.",
+      ko: "IPsec 암호화, NGFW, IPS로 지점 간 및 클라우드 트래픽을 보호합니다.",
+      zh: "通过 IPsec 加密、NGFW、IPS 等防护，保障分支之间及访问云端的流量安全。",
+    },
+  },
+  {
+    icon: Thermometer,
+    title: {
+      mn: "Монголын нөхцөлд тохирсон",
+      en: "Built for Mongolian conditions",
+      ko: "몽골 환경에 적합",
+      zh: "适应蒙古国环境",
+    },
+    desc: {
+      mn: "–40°C, IP65 зэрэглэлтэй тоног төхөөрөмжөөр уурхай, алслагдсан цэгүүдийг ч найдвартай холбоно.",
+      en: "Equipment rated for –40°C and IP65 reliably connects mines and remote sites.",
+      ko: "–40°C, IP65 등급 장비로 광산과 원격 현장도 안정적으로 연결합니다.",
+      zh: "采用耐 –40°C、IP65 防护等级的设备，可靠连接矿区及偏远站点。",
+    },
+  },
+];
 
 const MPLS_UTIL: L10n = {
   mn: "MPLS шугамын дан ашиглалт",
@@ -268,8 +435,6 @@ const DEVICE_TYPES: { icon: React.ElementType; name: string; tag: L10n; desc: L1
     examples: "Meraki MX · Cato · Aryaka",
   },
 ];
-
-type Point = { icon: React.ElementType; title: L10n; desc: L10n };
 
 const CRITERIA: Point[] = [
   {
@@ -591,9 +756,9 @@ export default function SdWan() {
             {COPY.badge[lang]}
           </span>
           <h1 className="mt-6 max-w-4xl text-3xl font-bold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-            {COPY.title[lang]}
+            {COPY.h1[lang]}
           </h1>
-          <p className="mt-6 max-w-3xl text-base text-slate-600 md:text-lg">{COPY.subtitle[lang]}</p>
+          <p className="mt-6 max-w-3xl text-base text-slate-600 md:text-lg">{COPY.lead[lang]}</p>
 
           <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row">
             <Link
@@ -622,6 +787,48 @@ export default function SdWan() {
                 <p className="mt-1.5 text-sm text-slate-600">{stat.label[lang]}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* What is SD-WAN & our services */}
+        <section className="mt-20 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">{COPY.whatTitle[lang]}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">{COPY.whatBody[lang]}</p>
+          </article>
+          <article className="rounded-2xl border border-slate-200 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 p-6 shadow-sm md:p-8">
+            <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">{COPY.serviceTitle[lang]}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-slate-600 md:text-base">{COPY.serviceBody[lang]}</p>
+            <ul className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {SERVICE_STEPS.map((step) => (
+                <li key={step.en} className="flex gap-2 text-sm text-slate-700">
+                  <Check className="mt-0.5 size-4 flex-shrink-0 text-indigo-600" />
+                  <span>{step[lang]}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
+
+        {/* Why SD-WAN */}
+        <section className="mt-24">
+          <SectionHeading eyebrow={COPY.whyEyebrow[lang]} title={COPY.whyTitle[lang]} />
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {BENEFITS.map((benefit) => {
+              const Icon = benefit.icon;
+              return (
+                <div
+                  key={benefit.title.en}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/10"
+                >
+                  <div className="flex size-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                    <Icon className="size-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-slate-900">{benefit.title[lang]}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{benefit.desc[lang]}</p>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -831,11 +1038,44 @@ export default function SdWan() {
           </div>
         </section>
 
-        {/* Conclusion CTA */}
-        <section className="mt-24 flex flex-col items-start gap-6 rounded-3xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-8 text-white shadow-2xl shadow-indigo-500/20 md:flex-row md:items-center md:justify-between md:p-12">
+        {/* FAQ */}
+        <section className="mt-24">
+          <SectionHeading eyebrow={COPY.faqEyebrow[lang]} title={COPY.faqTitle[lang]} />
+          <div className="mx-auto mt-10 max-w-3xl space-y-3">
+            {SDWAN_FAQ.map((item) => (
+              <details
+                key={item.q.en}
+                className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm open:border-indigo-200"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                  <h3 className="text-left text-sm font-semibold text-slate-900 md:text-base">{item.q[lang]}</h3>
+                  <ChevronDown className="size-5 flex-shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.a[lang]}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section
+          id="contact"
+          className="mt-24 flex flex-col items-start gap-8 rounded-3xl bg-gradient-to-r from-indigo-600 to-cyan-500 p-8 text-white shadow-2xl shadow-indigo-500/20 md:flex-row md:items-center md:justify-between md:p-12"
+        >
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{COPY.conclusion[lang]}</h2>
-            <p className="mt-3 text-sm text-indigo-50 md:text-base">{COPY.nextStep[lang]}</p>
+            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">{COPY.contactTitle[lang]}</h2>
+            <p className="mt-3 text-base font-semibold md:text-lg">{COPY.conclusion[lang]}</p>
+            <p className="mt-2 text-sm text-indigo-50 md:text-base">{COPY.nextStep[lang]}</p>
+            <div className="mt-6 flex flex-col gap-3 text-sm sm:flex-row sm:gap-8">
+              <a href={`tel:${CONTACT_PHONE_TEL}`} className="inline-flex items-center gap-2 font-semibold hover:underline">
+                <Phone className="size-4" />
+                {COPY.phoneLabel[lang]}: {CONTACT_PHONE_DISPLAY}
+              </a>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 font-semibold hover:underline">
+                <Mail className="size-4" />
+                {COPY.emailLabel[lang]}: {CONTACT_EMAIL}
+              </a>
+            </div>
           </div>
           <Link
             href="/contact"
