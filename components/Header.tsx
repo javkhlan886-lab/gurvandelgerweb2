@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ArrowRight } from "lucide-react";
@@ -24,6 +24,28 @@ const PRODUCTS = [
 
 export default function Header() {
   const { t } = useLanguage();
+  const [productsOpen, setProductsOpen] = useState(false);
+  const productsRef = useRef<HTMLDivElement>(null);
+
+  // Touch screens have no hover, so the dropdown is also toggled by tapping;
+  // close it on an outside tap or Escape.
+  useEffect(() => {
+    if (!productsOpen) return;
+    const handlePointerDown = (e: PointerEvent) => {
+      if (!productsRef.current?.contains(e.target as Node)) setProductsOpen(false);
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setProductsOpen(false);
+    };
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [productsOpen]);
+
+  const closeProducts = () => setProductsOpen(false);
 
   const NAV_LINKS = [
     { href: "/about", label: t("nav.about") },
@@ -35,7 +57,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-4 py-3.5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="relative max-w-7xl mx-auto px-4 py-3.5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <Link
           href="/"
           className="group flex items-center select-none cursor-pointer"
@@ -59,18 +81,32 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="relative group">
-            <a
-              href="https://product.gurvandelger.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative inline-flex items-center gap-1 transition-colors hover:text-indigo-600 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-indigo-500 after:transition-all hover:after:w-full"
+          <div ref={productsRef} className="group md:relative" onMouseLeave={closeProducts}>
+            <button
+              type="button"
+              aria-haspopup="true"
+              aria-expanded={productsOpen}
+              aria-controls="products-menu"
+              onClick={() => setProductsOpen((open) => !open)}
+              className={`relative inline-flex cursor-pointer items-center gap-1 transition-colors hover:text-indigo-600 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-indigo-500 after:transition-all hover:after:w-full ${
+                productsOpen ? "text-indigo-600" : ""
+              }`}
             >
               {t("nav.products")}
-              <ChevronDown className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
-            </a>
+              <ChevronDown
+                className={`size-3.5 transition-transform duration-200 group-hover:rotate-180 ${
+                  productsOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
 
-            <div className="absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0">
+            {/* On phones the menu spans the header width; on md+ it sits under the button. */}
+            <div
+              id="products-menu"
+              className={`absolute inset-x-4 top-full z-50 pt-2 transition-all duration-200 md:inset-x-auto md:left-1/2 md:w-72 md:-translate-x-1/2 md:pt-3 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
+                productsOpen ? "visible translate-y-0 opacity-100" : "invisible translate-y-1 opacity-0"
+              }`}
+            >
               <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-900/10">
                 {PRODUCTS.map((product) => {
                   const itemClass =
@@ -91,12 +127,18 @@ export default function Header() {
                       href={product.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={closeProducts}
                       className={itemClass}
                     >
                       {content}
                     </a>
                   ) : (
-                    <Link key={product.href} href={product.href} className={itemClass}>
+                    <Link
+                      key={product.href}
+                      href={product.href}
+                      onClick={closeProducts}
+                      className={itemClass}
+                    >
                       {content}
                     </Link>
                   );
@@ -106,6 +148,7 @@ export default function Header() {
                   href="https://product.gurvandelger.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={closeProducts}
                   className="flex items-center justify-between rounded-xl p-3 text-sm font-semibold text-indigo-600 transition-colors hover:bg-indigo-50"
                 >
                   {t("nav.viewAllProducts")}
