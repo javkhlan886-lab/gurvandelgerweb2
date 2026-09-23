@@ -31,6 +31,18 @@ const dict = {
     ko: "본사, 지점 및 원격 사이트를 하나의 안정적이고 안전한 네트워크로 연결하는 솔루션입니다.",
     zh: "将总部、分支机构及远程站点连接为一个可靠、安全网络的解决方案。",
   },
+  "product.portablePower.name": {
+    mn: "2.2 кВт·ц зөөврийн цахилгаан",
+    en: "2.2 kWh Portable Power",
+    ko: "2.2kWh 이동형 전원",
+    zh: "2.2 kWh 便携电源",
+  },
+  "product.portablePower.desc": {
+    mn: "400 Вт нарны хавтан, LiFePO₄ батерей, 2200 Вт гаралт — цахилгааны шугамгүй газарт эрчим хүчний бүрэн шийдэл.",
+    en: "A 400 W solar panel, a LiFePO₄ battery and 2200 W of output — a complete power solution for off-grid sites.",
+    ko: "400W 태양광 패널, LiFePO₄ 배터리, 2200W 출력 — 전력망이 없는 곳을 위한 완전한 전원 솔루션입니다.",
+    zh: "400 W 太阳能板、LiFePO₄ 电池、2200 W 输出 — 为无电网地区提供完整供电方案。",
+  },
 
   "footer.contact": { mn: "ХОЛБОО БАРИХ", en: "CONTACT US", ko: "문의하기", zh: "联系我们" },
   "footer.developedBy": {

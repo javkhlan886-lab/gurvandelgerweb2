@@ -4,20 +4,34 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ArrowRight } from "lucide-react";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, type TranslationKey } from "@/lib/i18n";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const PRODUCTS = [
+// A product is labelled either by `name` (a brand name, shown as-is) or by
+// `nameKey` where the label is descriptive and so needs translating.
+type Product = {
+  descKey: TranslationKey;
+  href: string;
+  external: boolean;
+} & ({ name: string; nameKey?: undefined } | { nameKey: TranslationKey; name?: undefined });
+
+const PRODUCTS: Product[] = [
   {
     name: "PnL Platform",
-    descKey: "product.pnl.desc" as const,
+    descKey: "product.pnl.desc",
     href: "https://product.gurvandelger.com/",
     external: true,
   },
   {
     name: "SD-WAN",
-    descKey: "product.sdwan.desc" as const,
+    descKey: "product.sdwan.desc",
     href: "/products/sd-wan",
+    external: false,
+  },
+  {
+    nameKey: "product.portablePower.name",
+    descKey: "product.portablePower.desc",
+    href: "/products/portable-power",
     external: false,
   },
 ];
@@ -114,7 +128,7 @@ export default function Header() {
                   const content = (
                     <>
                       <span className="text-sm font-semibold text-slate-900">
-                        {product.name}
+                        {product.nameKey ? t(product.nameKey) : product.name}
                       </span>
                       <span className="text-xs leading-relaxed text-slate-500">
                         {t(product.descKey)}
